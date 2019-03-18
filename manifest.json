@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "赚客吧论坛助手",
+  "version": "0.1",
+  "description": "玖玖收话费自动接单插件",
+  "author": "krapnik",
+  "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "homepage_url": "https://github.com/krapnikkk",
+  "permissions": [
+    "cookies",
+    "http://zuanke8.com/",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "layx.min.js",
+        "js/content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
