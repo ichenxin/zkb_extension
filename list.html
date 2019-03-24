@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>监控</title>
+    <script src="js/layui.all.js"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layui.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            height: 59px;
+            border-bottom: 1px solid #404553;
+            background-color: #393D49;
+        }
+
+        .header .layui-nav {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            background: none;
+        }
+
+        .logo {
+            position: absolute;
+            left: 12px;
+            top: 8px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .layui-tab-content {
+            padding: 0;
+        }
+
+        .layui-tab {
+            position: relative;
+            margin: 0 auto 35px !important;
+            max-width: 1140px;
+            padding-top: 55px;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header header header-doc">
+        <div class="layui-main">
+            <a class="logo" href="/">
+                <img src="img/icon.png" alt="layui">
+            </a>
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item layui-this"><a href="#">监控</a></li>
+                <li class="layui-nav-item"><a href="nav.html">导航</a></li>
+                <li class="layui-nav-item"><a href="options.html">设置</a></li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li  class="layui-nav-item" style="margin-top: 10px;">
+                    <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>
+                    <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=fork&count=true" width="100" height="20"></iframe>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
+                        <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-tab">
+        <div class="layui-tab-content">
+            <div class="fly-panel" style="margin-bottom: 0;">
+                <ul class="fly-list">
+                    <!--<li>-->
+                    <!--<a href="/u/4822104" class="fly-avatar"> <img-->
+                    <!--src="//q.qlogo.cn/qqapp/101235792/CE28D5EBC10915069C3E1959DA83FB71/100" alt="MicroPea"> </a>-->
+                    <!--<h2><a class="layui-badge">分享</a> <a href="/jie/49796/">分享动态表头代码,不废话</a></h2>-->
+                    <!--<div class="fly-list-info">-->
+                    <!--<a href="/u/4822104" link="">-->
+                    <!--<cite>MicroPea</cite>-->
+                    <!--</a>-->
+                    <!--<span>1小时前</span>-->
+                    <!--<span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 20</span>-->
+                    <!--<span class="fly-list-nums"> <i class="iconfont icon-pinglun1" title="回答"></i> 0 </span>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layui.all.js"></script>
+<script src="js/list.js"></script>
+</body>
+</html>

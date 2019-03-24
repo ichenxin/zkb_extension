@@ -14,12 +14,15 @@
     "default_icon": "img/icon.png",
     "default_popup": "popup.html"
   },
+  "content_security_policy": "script-src 'self' https://hm.baidu.com; object-src 'self'",
   "homepage_url": "https://github.com/krapnikkk",
   "permissions": [
     "cookies",
-    "http://zuanke8.com/",
+    "http://*/*",
+    "https://*/*",
     "notifications",
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "background": {
     "page": "background.html"
@@ -32,8 +35,10 @@
       ],
       "js": [
         "layx.min.js",
+        "js/jquery.min.js",
         "js/content-script.js"
       ],
+      "css":["layx.min.css"],
       "run_at": "document_idle"
     }
   ]
