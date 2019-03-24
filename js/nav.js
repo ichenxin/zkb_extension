@@ -3,8 +3,8 @@ $(function () {
     var nav_item, nav_name, nav = $('.layui-nav-tree'), content, item_list, item, row, body = $('.layui-body'), col,
         card, card_header, card_body;
     $.ajax({
-        url: './json/nav.json',
-        // url: 'https://raw.githubusercontent.com/krapnikkk/forumHelper/master/app.json',
+        // url: './json/nav.json',
+        url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/nav.json',
         type: 'GET',
         dataType: 'json',
         timeout: 1000,

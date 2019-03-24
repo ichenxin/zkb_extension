@@ -17,6 +17,8 @@
   "content_security_policy": "script-src 'self' https://hm.baidu.com; object-src 'self'",
   "homepage_url": "https://github.com/krapnikkk",
   "permissions": [
+    "tabs",
+    "webRequest",
     "cookies",
     "http://*/*",
     "https://*/*",
@@ -39,7 +41,7 @@
         "js/content-script.js"
       ],
       "css":["layx.min.css"],
-      "run_at": "document_idle"
+      "run_at": "document_end"
     }
   ]
 }

@@ -119,10 +119,10 @@
         return uniq(str.split(keyword));
     }
 
-    function uniq(array){
+    function uniq(array) {
         var temp = [];
-        for(var i = 0; i < array.length; i++){
-            if(temp.indexOf(array[i]) === -1){
+        for (var i = 0; i < array.length; i++) {
+            if (temp.indexOf(array[i]) === -1) {
                 temp.push(array[i]);
             }
         }
@@ -153,7 +153,7 @@
 
     function isNew(date) {
         var now = new Date();
-        if(date.indexOf(`${now.getMonth() + 1}-${now.getDate()}`) > -1) {
+        if (date.indexOf(`${now.getMonth() + 1}-${now.getDate()}`) > -1) {
             return true;
         }
         return false
@@ -220,6 +220,7 @@
     // ==============工具箱区================
     //右键菜单
     chrome.contextMenus.create({"title": "文字转二维码图片", "contexts": ["selection"], "onclick": clickOnSelection});
+    chrome.contextMenus.create({"title": "将Ta加入黑名单", "contexts": ["selection"], "onclick": clickAddBlackList});
     chrome.contextMenus.create({"title": "解析该二维码图片", "contexts": ["image"], "onclick": clickGetImage});
     var ctxMenuId = chrome.contextMenus.create({"title": "京东商品一键直达", "contexts": ["selection"]});
     chrome.contextMenus.create({
@@ -235,13 +236,14 @@
         "onclick": clickGetGood
     });
 
-    function clickOnSelection(params,tab) {
-        var message = {'evt':'qrcode','type': 'getImage', 'msg': params.selectionText};
-        chrome.tabs.sendRequest( tab.id,message);
+
+    function clickOnSelection(params, tab) {
+        var message = {'evt': 'qrcode', 'type': 'getImage', 'msg': params.selectionText};
+        chrome.tabs.sendRequest(tab.id, message);
     }
 
-    function clickGetImage(params,tab) {
-        var message = {'evt':'qrcode','type': 'decode', 'msg': encodeURI(params.srcUrl)};
+    function clickGetImage(params, tab) {
+        var message = {'evt': 'qrcode', 'type': 'decode', 'msg': encodeURI(params.srcUrl)};
         chrome.tabs.sendRequest(tab.id, message);
     }
 
@@ -266,6 +268,54 @@
         } else {
             alert('商品编号有误！');
         }
+    }
+
+    function clickAddBlackList(params){
+        var nickname = $URL.encode(params.selectionText);
+        $.ajax({
+            url: 'http://www.zuanke8.com/home.php?mod=spacecp&ac=friend&op=blacklist',
+            dataType: 'json',
+            type: 'POST',
+            xhrFields: {
+                withCredentials: true
+            },
+            data: {"username":nickname,formhash:"ed1e1d45",blacklistsubmit:true,blacklistsubmit_btn:true},
+            crossDomain: true,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (err) {
+
+            }
+        });
+    }
+
+
+    chrome.webRequest.onBeforeRequest.addListener(function (details){
+        if(details.method === "POST" && details.url.indexOf('newBabelAwardCollection')>-1){
+            var formData = details.requestBody.formData;
+            var url = details.url;
+            if(formData){
+                // console.log(url + parseObject(formData));
+                chrome.tabs.getSelected(function(tabs){
+                    url = url + parseObject(formData);
+                    var message = {'evt': 'url', 'url': url};
+                    chrome.tabs.sendRequest(tabs.id, message);
+                })
+
+            }
+        }
+    },{urls: ["<all_urls>"]},["requestBody"]);
+
+    function parseObject(obj){
+        var str = "";
+        for(var key in obj){
+            if(obj[key][0]){
+                str += `&${key}=${obj[key][0]}`;
+            }
+        }
+        return str;
     }
 })();
 

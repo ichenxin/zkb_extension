@@ -21,6 +21,21 @@
             li.append(a, title, info);
             ul.append(li);
         }
-    }
+    };
+    var bg = chrome.extension.getBackgroundPage()
+    //回到顶部
+    var timer;
+    $('.layui-fixbar-top').on('click',function(){
+        timer = setInterval(function(){
+            // 变量设置在定时器防止重置
+            var backTop = $('.layui-layout-body')[0].scrollTop;
+            var speedTop =   backTop/5;
+            $('.layui-layout-body')[0].scrollTop = backTop - speedTop;
+            if(backTop <= 0){
+                clearInterval(timer);
+            }
+        },30)
+
+    })
 })('relist');
 

@@ -43,34 +43,93 @@
     </style>
     <link rel="stylesheet" href="css/layui.css">
 </head>
-<body>
-<div class="layui-header header header-doc" spring="">
-    <div class="layui-main">
-        <a class="logo" href="/">
-            <img src="img/icon.png" alt="layui">
-        </a>
-        <ul class="layui-nav">
-            <li class="layui-nav-item"><a href="">最新活动</a></li>
-            <li class="layui-nav-item layui-this"><a href="">设置</a></li>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <a class="logo" href="/">
+                <img src="img/icon.png" alt="layui">
+            </a>
+        </div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="list.html">监控</a></li>
+            <li class="layui-nav-item layui-this"><a href="#">导航</a></li>
+            <li class="layui-nav-item"><a href="options.html">设置</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li  class="layui-nav-item" style="margin-top: 10px;">
+                <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>
+                <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=fork&count=true" width="100" height="20"></iframe>
+            </li>
+            <li class="layui-nav-item">
+                <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
+                    <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
+                </a>
+            </li>
         </ul>
     </div>
-</div>
-<div class="layui-tab">
-    <ul class="layui-tab-title">
-        <li class="layui-this">监控设置</li>
-        <li>主题管理</li>
-        <li>其他管理</li>
-    </ul>
-    <div class="layui-tab-content">
-        <div class="layui-tab-item layui-show">内容1</div>
-        <div class="layui-tab-item">内容2</div>
-        <div class="layui-tab-item">内容3</div>
-        <div class="layui-tab-item">内容4</div>
-        <div class="layui-tab-item">内容5</div>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">监控设置</li>
+            <li>其他管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form" lay-filter="form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">监控开关</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="listen" lay-skin="switch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">弹窗开关</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="notification" lay-skin="switch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">弹窗时长</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="span" required="" lay-vertype="tips" value=2 autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">通知弹窗显示的时长，单位：【秒】</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">监控间隔</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="span" required="" lay-vertype="tips" value=2 autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">单位：【秒】</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">缓存数量</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="receiveNum" required="" value=1 autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">监听到帖子将会缓存在<a href="list.html" target="_blank">监听列表</a></div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">监控关键词</label>
+                        <div class="layui-input-block">
+                            <textarea name="desc" placeholder="请输入监控帖子的关键词" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn btn-commit">保存</button>
+                            <button class="layui-btn layui-btn-danger btn-cancel">取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-tab-item">建设中</div>
+
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/layui.all.js"></script>
-<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/options.js"></script>
 </body>
 </html>
