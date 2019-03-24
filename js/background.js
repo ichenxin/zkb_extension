@@ -22,6 +22,7 @@
         if (options.notification) {//是否开启通知
             get('notifications', noticeQueque);
         }
+
     }, options.time);
 
     function noticeQueque(arr) {
@@ -152,7 +153,7 @@
 
     function isNew(date) {
         var now = new Date();
-        if (date.indexOf(`${now.getMonth() + 1}-${now.getDate()}`) > -1) {
+        if(date.indexOf(`${now.getMonth() + 1}-${now.getDate()}`) > -1) {
             return true;
         }
         return false

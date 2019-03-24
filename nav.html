@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .logo {
+            position: absolute;
+            left: 75px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <a class="logo" href="/">
+                <img src="img/icon.png" alt="layui">
+            </a>
+        </div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="list.html">监控</a></li>
+            <li class="layui-nav-item layui-this"><a href="#">导航</a></li>
+            <li class="layui-nav-item"><a href="options.html">设置</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li  class="layui-nav-item" style="margin-top: 10px;">
+                <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>
+                <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=fork&count=true" width="100" height="20"></iframe>
+            </li>
+            <li class="layui-nav-item">
+                <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
+                    <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree">
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body" style="padding: 20px; background-color: #F2F2F2;">
+        <!--<div class="layui-row layui-col-space15">-->
+        <!--<h2>常用推荐</h2>-->
+        <!--<div class="layui-col-md3">-->
+        <!--<div class="layui-card">-->
+        <!--<div class="layui-card-header text-red">最新主题页</div>-->
+        <!--<div class="layui-card-body">-->
+        <!--<p class="layui-card-conetnt">大家谈谈+求助咨询+赚客心经+号外号外</p>-->
+        <!--<div class="layui-btn-container">-->
+        <!--<a href="#"><button class="layui-btn layui-btn-sm layui-btn-radius">直达链接</button></a>-->
+        <!--<a href="#"><button class="layui-btn layui-btn-sm layui-btn-radius">推广链接</button></a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        <div class="layui-main">
+            © 最近更新：<span class="update_date"></span>
+            <div class="layui-layout-right">
+                <span class="layui-badge-dot"></span><span style="font-size:14px;color:#e33;font-weight: 700;">本栏目仅作网站收集整合，网站安全性请自行判断，欢迎推荐其他相关网站。</span>
+            </div>
+        </div>
+    </div>
+    <ul class="layui-fixbar">
+        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;font-size:14px;margin-bottom: 30px;">顶部</li>
+    </ul>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layui.all.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script src="https://hm.baidu.com/hm.js?9196b186f9063959e6623fa299c36b95"></script>
+</body>
+</html>

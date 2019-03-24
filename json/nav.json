@@ -1,0 +1,259 @@
+{
+  "author": "krapnik",
+  "time": "20190324",
+  "content": [
+    {
+      "item": "recommend",
+      "name":"常用推荐",
+      "list": [
+        {
+          "id": 1,
+          "name": "最新主题页",
+          "url": "http://www.zuanke8.com/zuixin.php",
+          "desc": "所有版块最新主题聚合页",
+          "type":0
+        },
+        {
+          "id": 2,
+          "name": "赚客大家谈",
+          "url": "http://www.zuanke8.com/forum-15-1.html",
+          "desc": "大家谈谈+求助咨询+赚客心经+号外号外",
+          "type":0
+        },
+        {
+          "id": 3,
+          "name": "每日热帖",
+          "url": "http://www.zuanke8.com/re.php",
+          "desc": "每日热帖"
+        },
+        {
+          "id": 4,
+          "name": "我的收藏",
+          "url": "http://www.zuanke8.com/home.php?mod=space&do=favorite&view=me",
+          "desc": "我的收藏"
+        },
+        {
+          "id": 5,
+          "name": "活动线报",
+          "url": "http://www.zuanke8.com/forum-19-1.html",
+          "desc": "活动线报"
+        },
+        {
+          "id": 6,
+          "name": "我的交易",
+          "url": "http://www.zuanke8.com/plugin.php?id=ejew_auction3",
+          "desc": "论坛果果交易"
+        },
+        {
+          "id": 7,
+          "name": "购物返果订单",
+          "url": "http://www.zuanke8.com/plugin.php?id=ejew_chanet&type=1",
+          "desc": "购物返果订单"
+        }
+      ]
+    },
+    {
+      "item": "recycle",
+      "name":"资源回收",
+      "list": [
+        {
+          "id": 1,
+          "name": "玖玖收",
+          "url": "http://99shou.cn",
+          "sub_url": "http://99shou.cn/url/9db",
+          "desc": "闲置资源寄售平台",
+          "type":1
+        },
+        {
+          "id": 2,
+          "name": "4022",
+          "url": "http://4022.cn/",
+          "sub_url": "http://4022.cn/34569",
+          "desc": "诚信专业的Q币回收提现平台",
+          "type":1
+        },
+        {
+          "id": 3,
+          "name": "茶蛋回收",
+          "url": "http://www.chadan.wang",
+          "sub_url": "http://www.chadan.wang/#/register?code=AFa8uBkh29450",
+          "desc": "话费接单、券兑换、积分兑换、兼职交易平台",
+          "type":0
+        },
+        {
+          "id": 4,
+          "name": "蜜蜂178",
+          "url": "http://www.mf178.cn/",
+          "sub_url": "http://www.mf178.cn/home/invite_page?u=e0f29581383c8c08a28b363a",
+          "desc": "互联网增值服务供应商",
+          "type":0
+        },
+        {
+          "id": 5,
+          "name": "小牛回收",
+          "url": "http://hf.xn359.com/app/dc/index/index",
+          "sub_url": "http://hf.xn359.com/app/dc/index/index?fuid=wDOyDVteZ",
+          "desc": "数字产品转让，移动直充平台",
+          "type":0
+        }
+      ]
+    },
+    {
+      "item": "task",
+      "name":"任务发布",
+      "list": [
+        {
+          "id": 1,
+          "name": "百威微运营",
+          "url": "http://www.yiqizaixian.com/",
+          "sub_url":"http://www.yiqizaixian.com?t=3334 ",
+          "desc": "微信公众号扫码关注任务发布平台",
+          "type":0
+        },
+        {
+          "id": 2,
+          "name": "伦桥扫码平台【已关闭注册入口】",
+          "url": "http://wx.xuehublc.com",
+          "desc": "微信公众号扫码关注任务发布平台",
+          "type":0
+        }
+      ]
+    },
+    {
+      "item": "share",
+      "name":"共享互助",
+      "list": [
+        {
+          "id": 1,
+          "name": "淘宝领金币",
+          "url": "http://wo56455.xyz/tjb.html",
+          "desc": "淘金币签到一键领取，每日更新！",
+          "type":1
+        },
+        {
+          "id": 2,
+          "name": "奇兔客【支付宝公众号搜索】",
+          "url": "http://www.qituke.com/",
+          "desc": "支付宝搜奇兔客，主打阿里系互助活动",
+          "type":0
+        },
+        {
+          "id": 3,
+          "name": "微玩卡互助栏目",
+          "url": "http://share.ysmlc.com/shareActivity/",
+          "desc": "偶尔还是会更新的一个互助平台",
+          "type":0
+        },
+        {
+          "id": 4,
+          "name": "免费骑行领券",
+          "url": "http://www.jiulung.com/",
+          "desc": "摩拜，OFO，滴滴，美团外卖，饿了么领券分享平台",
+          "type":0
+        }
+      ]
+    },
+    {
+      "item": "verify_SMS",
+      "name":"接码平台",
+      "list": [
+        {
+          "id": 1,
+          "name": "淘宝领金币",
+          "url": "http://wo56455.xyz/tjb.html",
+          "desc": "淘金币签到一键领取，每日更新！",
+          "type":0
+        }
+      ]
+    },
+    {
+      "item": "Typing",
+      "name":"打码平台",
+      "list": [
+        {
+          "id": 1,
+          "name": "若快打码",
+          "url": "http://www.ruokuai.com/",
+          "desc": "专业图像识别、图形识别",
+          "type":0
+        },
+        {
+          "id": 2,
+          "name": "超人打码",
+          "url": "http://www.chaorendama.com/",
+          "desc": "智能图片识别平台",
+          "type":0
+        },
+        {
+          "id": 3,
+          "name": "优优云",
+          "url": "http://www.uuwise.com/",
+          "desc": "人工智能标注平台",
+          "type":0
+        },
+        {
+          "id": 4,
+          "name": "打码兔",
+          "url": "http://www.dama2.com/",
+          "desc": "智能图片识别平台",
+          "type":0
+        }
+      ]
+    },
+    {
+      "item": "moive",
+      "name":"影视音乐",
+      "list": [
+        {
+          "id": 1,
+          "name": "麻花影视",
+          "url": "http://www.imahua.com/",
+          "desc": "麻花影视-追天下电影电视，上最快麻花影视",
+          "type":0
+        },
+        {
+          "id": 2,
+          "name": "电影天堂",
+          "url": "http://www.dytt8.net/",
+          "desc": "电影天堂_免费电影_迅雷电影下载。",
+          "type":0
+        },
+        {
+          "id": 3,
+          "name": "嘀哩嘀哩",
+          "url": "http://www.dilidili.wang/",
+          "desc": "嘀哩嘀哩，这里是兴趣使然的无名小站",
+          "type":0
+        },
+        {
+          "id": 4,
+          "name": "在线视频解析",
+          "url": "http://tv.hwkxk.cn/",
+          "desc": "在线视频解析",
+          "type":0
+        },
+        {
+          "id": 5,
+          "name": "[孟坤] 多平台播放器",
+          "url": "http://hwkxk.cn/mkplayer/",
+          "desc": "【github:https://github.com/mengkunsoft/MKOnlineMusicPlayer】",
+          "type":0
+        },
+        {
+          "id": 6,
+          "name": "音乐搜索器",
+          "url": "http://www.guqiankun.com/tools/music/",
+          "desc": "多站合一音乐搜索解决方案",
+          "type":0
+        },
+        {
+          "id": 7,
+          "name": "音乐下载助手",
+          "url": "http://hwkxk.cn/",
+          "desc": "多站合一音乐搜索解决方案",
+          "type":0
+        }
+      ]
+    }
+  ]
+}
