@@ -8,22 +8,37 @@
         type: 'relist',//最新主题
         count: 100,//监控列表数目
         time: 5000,//监控间距
+        popup_time:5000,//弹窗通知时长
         notification: true,//是否开启通知
         listen: true,//是否开启监听
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一,0,1,元,货,流量"//关键词
     };
 
-    var t1 = window.setInterval(function () {
-        if (!options.listen) {//是否监听
-            window.clearInterval(t1);
-        } else {
-            list();
+    chrome.storage.local.get({'options':''}, function (items) {
+        var obj = items.options;
+        obj = JSON.parse(obj);
+        if(obj){
+            options.count = obj.count;
+            options.time = obj.time;
+            options.popup_time = obj.popup_time;
+            options.notification = obj.notification;
+            options.listen = obj.listen;
+            options.keywords = obj.keywords;
         }
-        if (options.notification) {//是否开启通知
-            get('notifications', noticeQueque);
-        }
+        var t1 = window.setInterval(function () {
+            if (!options.listen) {//是否监听
+                window.clearInterval(t1);
+            } else {
+                list();
+            }
+            if (options.notification) {//是否开启通知
+                get('notifications', noticeQueque);
+            }
+        }, options.time);
+    })
 
-    }, options.time);
+
+
 
     function noticeQueque(arr) {
         if (arr) {
@@ -52,7 +67,7 @@
                 chrome.notifications.clear(notice_id, function () {
 
                 });
-            }, 8000);
+            }, options.popup_time);
             chrome.notifications.onClicked.addListener(function (notificationId) {
                 window.clearTimeout(t2);
                 t2 = null;
@@ -271,7 +286,8 @@
     }
 
     function clickAddBlackList(params){
-        var nickname = $URL.encode(params.selectionText);
+        // var nickname = $URL.encode(params.selectionText);
+        var nickname = params.selectionText;
         $.ajax({
             url: 'http://www.zuanke8.com/home.php?mod=spacecp&ac=friend&op=blacklist',
             dataType: 'json',
@@ -283,7 +299,7 @@
             crossDomain: true,
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
-                console.log(res);
+                
             },
             error: function (err) {
 
