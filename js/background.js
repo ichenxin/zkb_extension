@@ -13,19 +13,18 @@
         listen: true,//是否开启监听
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一,0,1,元,货,流量"//关键词
     };
-
-    chrome.storage.local.get({'options':''}, function (items) {
-        var obj = items.options;
-        obj = JSON.parse(obj);
-        if(obj){
-            options.count = obj.count;
-            options.time = obj.time;
-            options.popup_time = obj.popup_time;
-            options.notification = obj.notification;
-            options.listen = obj.listen;
-            options.keywords = obj.keywords;
-        }
-        var t1 = window.setInterval(function () {
+    var t1 = window.setInterval(function () {
+        chrome.storage.local.get({'options':''}, function (items) {
+            var obj = items.options;
+            if(obj){
+                obj = JSON.parse(obj);
+                options.count = obj.count;
+                options.time = obj.time;
+                options.popup_time = obj.popup_time;
+                options.notification = obj.notification;
+                options.listen = obj.listen;
+                options.keywords = obj.keywords;
+            }
             if (!options.listen) {//是否监听
                 window.clearInterval(t1);
             } else {
@@ -34,8 +33,9 @@
             if (options.notification) {//是否开启通知
                 get('notifications', noticeQueque);
             }
-        }, options.time);
-    })
+        })
+    }, options.time);
+
 
 
 
@@ -111,19 +111,25 @@
             var data = {};
             data['notifications'] = '';
             chrome.storage.local.get(data, function (items) {
-                var notifications = JSON.parse(items['notifications']);
-                var _hasFlag = true;
-                for (var i = 0; i < notifications.length; i++) {
-                    var notification = notifications[i];
-                    if (notification['tid'] === obj['tid']) {
-                        _hasFlag = false;
-                        break;
+                if(items['notifications']){
+                    var notifications = JSON.parse(items['notifications']);
+                    var _hasFlag = true;
+                    for (var i = 0; i < notifications.length; i++) {
+                        var notification = notifications[i];
+                        if (notification['tid'] === obj['tid']) {
+                            _hasFlag = false;
+                            break;
+                        }
                     }
+                    if (!notifications[0] || _hasFlag) {
+                        notifications.push(obj);
+                    }
+                    save('notifications', JSON.stringify(notifications));
+                }else{
+                    var _obj = obj;
+                    _obj._hasFlag = true;
+                    save('notifications', JSON.stringify([_obj]));
                 }
-                if (!notifications[0] || _hasFlag) {
-                    notifications.push(obj);
-                }
-                save('notifications', JSON.stringify(notifications));
             })
         }
     }
@@ -203,6 +209,9 @@
                 }
                 arr = findKeyWord(arr);
                 save(options.type, JSON.stringify(arr));
+            }else{
+
+                save(options.type, JSON.stringify(findKeyWord(data)));
             }
         });
     }
@@ -299,7 +308,7 @@
             crossDomain: true,
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
-                
+
             },
             error: function (err) {
 

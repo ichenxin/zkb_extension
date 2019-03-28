@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "赚客吧论坛助手",
-  "version": "0.1",
-  "description": "玖玖收话费自动接单插件",
+  "version": "1.1",
+  "description": "赚客吧论坛助手",
   "author": "krapnik",
   "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
   "icons": {
