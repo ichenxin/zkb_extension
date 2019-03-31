@@ -19,9 +19,9 @@
   "permissions": [
     "tabs",
     "webRequest",
+    "webRequestBlocking",
     "cookies",
-    "http://*/*",
-    "https://*/*",
+    "*://*/*",
     "notifications",
     "storage",
     "contextMenus"

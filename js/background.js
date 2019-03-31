@@ -8,15 +8,15 @@
         type: 'relist',//最新主题
         count: 100,//监控列表数目
         time: 5000,//监控间距
-        popup_time:5000,//弹窗通知时长
+        popup_time: 5000,//弹窗通知时长
         notification: true,//是否开启通知
         listen: true,//是否开启监听
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一,0,1,元,货,流量"//关键词
     };
     var t1 = window.setInterval(function () {
-        chrome.storage.local.get({'options':''}, function (items) {
+        chrome.storage.local.get({'options': ''}, function (items) {
             var obj = items.options;
-            if(obj){
+            if (obj) {
                 obj = JSON.parse(obj);
                 options.count = obj.count;
                 options.time = obj.time;
@@ -37,16 +37,13 @@
     }, options.time);
 
 
-
-
-
     function noticeQueque(arr) {
         if (arr) {
             var notifications = JSON.parse(arr);
             for (var i = 0; i < notifications.length; i++) {
                 var obj = notifications[i];
                 if (!obj.flag) {
-                    notification(obj.tid, obj.msg);
+                    notification(obj.tid, obj.msg,obj.cate);
                     notifications[i].flag = true;
                 }
             }
@@ -54,13 +51,31 @@
         }
     }
 
-    var t2;
+    var t2,now;
 
-    function notification(id, msg) {
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt))
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        for(var k in o)
+            if(new RegExp("("+ k +")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length===1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        return fmt;
+    }
+
+    function notification(id, msg,cate) {
         chrome.notifications.create(null, {
             type: 'basic',
             iconUrl: 'img/icon.png',
-            title: '监控提醒',
+            title: cate,
             message: msg
         }, function (notice_id) {
             t2 = setTimeout(function () {
@@ -93,6 +108,7 @@
                     var obj = {
                         tid: list[i].tid,
                         msg: list[i].subject,
+                        cate:list[i].fname,
                         flag: false
                     };
                     notificationPush(obj);
@@ -111,7 +127,7 @@
             var data = {};
             data['notifications'] = '';
             chrome.storage.local.get(data, function (items) {
-                if(items['notifications']){
+                if (items['notifications']) {
                     var notifications = JSON.parse(items['notifications']);
                     var _hasFlag = true;
                     for (var i = 0; i < notifications.length; i++) {
@@ -125,7 +141,7 @@
                         notifications.push(obj);
                     }
                     save('notifications', JSON.stringify(notifications));
-                }else{
+                } else {
                     var _obj = obj;
                     _obj._hasFlag = true;
                     save('notifications', JSON.stringify([_obj]));
@@ -163,7 +179,9 @@
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
                 if (isNew(res.data.relist[0].addtime)) {
-                    push(res.data.relist);
+                    var data = res.data.relist;
+                    save_thread(data);
+                    push(data);
                 }
             },
             error: function (err) {
@@ -173,12 +191,66 @@
     }
 
     function isNew(date) {
-        var now = new Date();
-        if (date.indexOf(`${now.getMonth() + 1}-${now.getDate()}`) > -1) {
+        now = new Date().format("yyyy-MM-dd hh:mm:ss");
+        console.log(date);
+        if (now.indexOf(date.substring(0,4)) > -1) {
             return true;
         }
         return false
     }
+
+    //保存所有赚客大家谈数据【新旧数据合并】
+    function save_thread(data){
+        var obj = {};
+        obj['thread'] = '';
+        chrome.storage.local.get(obj, function (items) {
+            var arr = items['thread'];
+            if (arr) {
+                arr = merge(data, arr);
+            }
+            save('thread', JSON.stringify(arr));
+            clear_thread();
+        });
+    }
+
+    //清洗数据
+    function clear_thread(){
+        var obj = {};
+        obj['thread'] = '';
+        chrome.storage.local.get(obj, function (items) {
+            var threads = items['thread'];
+            threads = JSON.parse(threads);
+            for (var i = threads.length; i > -1; i--) {
+                var thread = threads[i];
+                if(thread){
+                    var fname = thread.fname;
+                    if(fname!=="赚客大家谈"){//栏目清洗
+                        threads.splice(i,1);
+                    }else{
+                        var addtime = thread.addtime;
+                        if(!compareTime(addtime)){//时间清洗
+                            threads.splice(i,1);
+                        }
+                    }
+                }
+            }
+            save('thread', JSON.stringify(threads));
+        });
+    }
+
+    function compareTime(time){
+        if(now.indexOf(time.substring(0,3)) === -1){//日月校验 当日有效,第二天的数据直接清空
+            return false;
+        }
+        var thread_hour = +time.substring(6,8),hour = new Date().getHours(),
+            tread_minutes = +time.substring(9,11),minutes = new Date().getMinutes() ;
+        var thread_time = thread_hour*60 + tread_minutes,now_time = hour*60 + minutes;
+        if(Math.abs(now_time-thread_time)>60){//小时校验
+            return false
+        }
+        return true;
+    }
+
 
     function save(key, value) {
         var obj = {};
@@ -209,8 +281,7 @@
                 }
                 arr = findKeyWord(arr);
                 save(options.type, JSON.stringify(arr));
-            }else{
-
+            } else {
                 save(options.type, JSON.stringify(findKeyWord(data)));
             }
         });
@@ -294,7 +365,7 @@
         }
     }
 
-    function clickAddBlackList(params){
+    function clickAddBlackList(params) {
         // var nickname = $URL.encode(params.selectionText);
         var nickname = params.selectionText;
         $.ajax({
@@ -304,7 +375,7 @@
             xhrFields: {
                 withCredentials: true
             },
-            data: {"username":nickname,formhash:"ed1e1d45",blacklistsubmit:true,blacklistsubmit_btn:true},
+            data: {"username": nickname, formhash: "ed1e1d45", blacklistsubmit: true, blacklistsubmit_btn: true},
             crossDomain: true,
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
@@ -317,13 +388,13 @@
     }
 
 
-    chrome.webRequest.onBeforeRequest.addListener(function (details){
-        if(details.method === "POST" && details.url.indexOf('newBabelAwardCollection')>-1){
+    chrome.webRequest.onBeforeRequest.addListener(function (details) {
+        if (details.method === "POST" && details.url.indexOf('newBabelAwardCollection') > -1) {
             var formData = details.requestBody.formData;
             var url = details.url;
-            if(formData){
+            if (formData) {
                 // console.log(url + parseObject(formData));
-                chrome.tabs.getSelected(function(tabs){
+                chrome.tabs.getSelected(function (tabs) {
                     url = url + parseObject(formData);
                     var message = {'evt': 'url', 'url': url};
                     chrome.tabs.sendRequest(tabs.id, message);
@@ -331,16 +402,18 @@
 
             }
         }
-    },{urls: ["<all_urls>"]},["requestBody"]);
+    }, {urls: ["<all_urls>"]}, ["requestBody"]);
 
-    function parseObject(obj){
+    function parseObject(obj) {
         var str = "";
-        for(var key in obj){
-            if(obj[key][0]){
+        for (var key in obj) {
+            if (obj[key][0]) {
                 str += `&${key}=${obj[key][0]}`;
             }
         }
         return str;
     }
+
+
 })();
 

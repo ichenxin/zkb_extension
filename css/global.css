@@ -214,6 +214,14 @@ pre{border: none; border-left: 5px solid #ddd;}
 .fly-list li h2 a{display: inline-block; max-width: 80%; padding-right: 10px; font-size: 16px;}
 .fly-list li h2 .layui-badge{top: -2px; height: 16px; line-height: 16px; padding: 0 5px; margin-right: 10px; font-size: 12px; border: 1px solid #5FB878; background: none; color: #5FB878;}
 
+.rate-list li{position: relative; height: 45px; line-height: 22px; padding: 15px 15px 15px 75px; border-bottom: 1px dotted #e2e2e2;}
+.rate-list li:last-child{border-bottom: none;}
+.rate-list li h2,
+.rate-list li h2 a{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.rate-list li h2{height: 26px; font-size: 0;}
+.rate-list li h2 a{display: inline-block; max-width: 80%; padding-right: 10px; font-size: 16px;}
+.rate-list li h2 .layui-badge{top: -2px; height: 16px; line-height: 16px; padding: 0 5px; margin-right: 10px; font-size: 12px; border: 1px solid #5FB878; background: none; color: #5FB878;}
+
 .fly-list-info{position: relative; font-size: 13px; color: #999;}
 .fly-list-info>*{padding-right: 15px;}
 .fly-list-info a[link]{color: #999;}
@@ -605,6 +613,7 @@ body .fly-user-main{position: relative; min-height: 600px;}
 
     /* 列表 */
     .fly-list li h2 a{max-width: 72%;}
+    .rate-list li h2 a{max-width: 72%;}
 
     /* Detail 页 */
     .fly-admin-box{display: block; margin: 0; margin-top: 10px;}

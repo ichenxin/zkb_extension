@@ -74,10 +74,15 @@
             </ul>
         </div>
     </div>
-    <div class="layui-tab">
+    <div class="layui-tab layui-tab-brief" lay-filter="list">
+        <ul class="layui-tab-title" style="border-color:#1E9FFF">
+            <li class="layui-this" lay-id="hot">我的监控</li>
+            <li lay-id="rate">最新热帖</li>
+        </ul>
         <div class="layui-tab-content">
-            <div class="fly-panel" style="margin-bottom: 0;">
-                <ul class="fly-list">
+            <!--<div class="fly-panel" style="margin-bottom: 0;">-->
+                <div class="layui-tab-item layui-show">
+                    <ul class="fly-list">
                     <!--<li>-->
                     <!--<a href="/u/4822104" class="fly-avatar"> <img-->
                     <!--src="//q.qlogo.cn/qqapp/101235792/CE28D5EBC10915069C3E1959DA83FB71/100" alt="MicroPea"> </a>-->
@@ -92,8 +97,21 @@
                     <!--</div>-->
                     <!--</li>-->
                 </ul>
+                </div>
+                <div class="layui-tab-item">
+                    <p style="font-weight: 700;color:#009688;line-height: 2;font-size: 18px;margin-bottom: 20px">1.使用前需要打开监听开关以及网页有登录帐号；
+                        <br>2.该栏目显示的内容为1小时内加果数量最多的帖子排行【仅限（赚客大家谈）栏目】；
+                        <br>3.查看帖子的加果情况，根据登录帐号的用户组权限有关，不可越界查看；
+                        <br>4.权限255|被删除的帖子|撒果果的帖子也是无法查询到加果情况的；
+                        <br>5.由于一小时内的帖子数量较多，筛选加载需要点时间，请不要频繁操作！
+                    </p>
+                    <button class="layui-btn layui-btn-radius btn-rate">一键筛选</button><span style="font-weight: 700;color:red;margin-left: 20px" class="rate-list-details"></span>
+                    <hr class="layui-bg-blue">
+                    <ul class="rate-list">
+                    </ul>
+                </div>
             </div>
-        </div>
+        <!--</div>-->
     </div>
     <ul class="layui-fixbar">
         <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;font-size:14px;margin-bottom: 30px;">顶部</li>

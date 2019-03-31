@@ -49,6 +49,7 @@ $(function () {
     //回到顶部
     var timer;
     $('.layui-fixbar-top').on('click',function(){
+        clearInterval(timer);
         timer = setInterval(function(){
             // 变量设置在定时器防止重置
             var backTop = $('.layui-body')[0].scrollTop;
