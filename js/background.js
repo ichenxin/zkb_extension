@@ -192,7 +192,6 @@
 
     function isNew(date) {
         now = new Date().format("yyyy-MM-dd hh:mm:ss");
-        console.log(date);
         if (now.indexOf(date.substring(0,4)) > -1) {
             return true;
         }
