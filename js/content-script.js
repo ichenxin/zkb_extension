@@ -105,8 +105,3 @@ function sendURL(url) {
     })
 
 }
-
-var iframe = document.getElementsByTagName('iframe')[0].contentWindow;
-if(iframe){
-    console.log(iframe.connect_thread_info.post_id);
-}

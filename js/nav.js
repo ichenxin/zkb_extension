@@ -7,7 +7,7 @@ $(function () {
         url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/nav.json',
         type: 'GET',
         dataType: 'json',
-        timeout: 1000,
+        timeout: 3000,
         cache: false,
         success: function (res) {
             content = res.content;
@@ -39,9 +39,9 @@ $(function () {
             }
             $('.update_date').html(res.time);
         },
-        error: function (e) {
-            if (e.status === 404) {
-                alert('获取数据失败！请检查网络是否畅通！');
+        error: function (jqXHR, textStatus, errorThrown) {
+            if(textStatus==="timeout"){
+                alert('获取数据失败！好像网络不大支持访问github哦！');
             }
         }
     });
