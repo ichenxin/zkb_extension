@@ -4,7 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="UTF-8">
     <title>定时访问器</title>
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/layui.css">
+    <style>
+        .logo {
+            position: absolute;
+            left: 12px;
+            top: 8px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+        }
+        .layui-tab-content{
+            position: relative;
+            margin: 0 auto 35px !important;
+            max-width: 1140px;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -20,9 +39,9 @@
             <li class="layui-nav-item layui-this"><a href="options.html">设置</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
-            <li  class="layui-nav-item" style="margin-top: 10px;">
-                <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>
-            </li>
+            <!--<li  class="layui-nav-item" style="margin-top: 10px;">-->
+                <!--<iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>-->
+            <!--</li>-->
             <li class="layui-nav-item">
                 <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
                     <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
@@ -31,70 +50,52 @@
         </ul>
     </div>
     <div class="layui-tab-content">
+        <blockquote class="layui-elem-quote">北京时间：{{now}}<br>【该时间通过京东服务器接口实时获取】</blockquote>
         <form class="layui-form" action="">
             <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-block">
-                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">密码框</label>
+                <label class="layui-form-label">定时时间：</label>
                 <div class="layui-input-inline">
-                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请定时请求的时间点" autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-mid layui-word-aux">辅助文字</div>
+                <div class="layui-form-mid layui-word-aux">时间格式：2017-01-07 00-00-00</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">选择框</label>
-                <div class="layui-input-block">
-                    <select name="city" lay-verify="required">
-                        <option value=""></option>
-                        <option value="0">北京</option>
-                        <option value="1">上海</option>
-                        <option value="2">广州</option>
-                        <option value="3">深圳</option>
-                        <option value="4">杭州</option>
-                    </select>
+                <label class="layui-form-label">刷新间隔：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" required  value="500" autocomplete="off" class="layui-input">
                 </div>
+                <div class="layui-form-mid layui-word-aux">提交的间隔时间，默认：500</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">复选框</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="like[write]" title="写作">
-                    <input type="checkbox" name="like[read]" title="阅读" checked>
-                    <input type="checkbox" name="like[dai]" title="发呆">
+                <label class="layui-form-label">提交地址：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">开关</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="switch" lay-skin="switch">
+                <label class="layui-form-label">窗口数目：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" required value="1" autocomplete="off" class="layui-input">
                 </div>
+                <div class="layui-form-mid layui-word-aux">默认：1</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">单选框</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="sex" value="男" title="男">
-                    <input type="radio" name="sex" value="女" title="女" checked>
+                <label class="layui-form-label">提交次数：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" required value="0" lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">文本域</label>
-                <div class="layui-input-block">
-                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-                </div>
+                <div class="layui-form-mid layui-word-aux">每个窗口的提交次数 默认：0【无限次】</div>
             </div>
             <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" lay-submit>保存</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
         </form>
+        <hr class="layui-bg-blue">
     </div>
 </div>
-
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/layui.all.js"></script>

@@ -4,7 +4,6 @@
   "version": "1.11",
   "description": "赚客吧论坛助手",
   "author": "krapnik",
-  "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
   "icons": {
     "16": "img/icon.png",
     "48": "img/icon.png",
@@ -14,7 +13,7 @@
     "default_icon": "img/icon.png",
     "default_popup": "popup.html"
   },
-  "content_security_policy": "script-src 'self' https://hm.baidu.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com; object-src 'self'",
   "homepage_url": "https://github.com/krapnikkk",
   "permissions": [
     "tabs",

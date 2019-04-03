@@ -27,7 +27,6 @@ $(function () {
 
     //加果热帖
     $('.btn-rate').on('click',function(){
-        $(this).addClass('layui-btn-disabled');
         add_rate();
     });
 
@@ -39,6 +38,7 @@ $(function () {
             var threads = items['thread'];
             threads = JSON.parse(threads);
             if(threads){
+                $('.btn-rate').addClass('layui-btn-disabled');
                 var len =  threads.length,counter = 0;
                 for (var i = 0; i < len; i++) {
                     (function(n){
@@ -85,7 +85,8 @@ $(function () {
                         // }
                     })(i);
                 }
-
+            }else{
+                alert('暂未监听到任何数据！');
             }
         });
     }
