@@ -42,5 +42,6 @@
       "css":["layx.min.css"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "web_accessible_resources": ["js/inject.js"]
 }

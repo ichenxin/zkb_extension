@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="UTF-8">
-    <title>定时访问器</title>
+    <title>网页多开器</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/layui.css">
     <style>
@@ -58,80 +58,49 @@
                 <label class="layui-form-label">定时时间：</label>
                 <div class="layui-input-inline" style="width:380px">
                     <input style="width: 60px;display:inline" type="text" name="year" :disabled="is_post"
-                           v-model="post_time.year" required lay-verify="required|number" placeholder="年"
+                           v-model="post_time.year" required placeholder="年"
                            autocomplete="off" class="layui-input">
                     <input style="width: 60px;display:inline" type="text" name="mouth" :disabled="is_post"
-                           v-model="post_time.month" required lay-verify="required|number" placeholder="月"
+                           v-model="post_time.month" required placeholder="月"
                            autocomplete="off" class="layui-input">
                     <input style="width: 60px;display:inline" type="text" name="day" :disabled="is_post"
-                           v-model="post_time.day" required lay-verify="required|number" placeholder="日"
+                           v-model="post_time.day" required placeholder="日"
                            autocomplete="off" class="layui-input">
                     <input style="width: 60px;display:inline" type="text" name="hour" :disabled="is_post"
-                           v-model="post_time.hour" required lay-verify="required|number" placeholder="时"
+                           v-model="post_time.hour" required placeholder="时"
                            autocomplete="off" class="layui-input">
                     <input style="width: 60px;display:inline" type="text" name="minutes" :disabled="is_post"
-                           v-model="post_time.minutes" required lay-verify="required|number" placeholder="分"
+                           v-model="post_time.minutes" required placeholder="分"
                            autocomplete="off" class="layui-input">
                     <input style="width: 60px;display:inline" type="text" name="second" :disabled="is_post"
-                           v-model="post_time.second" required lay-verify="required|number" placeholder="秒"
+                           v-model="post_time.second" placeholder="秒"
                            autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">时间格式：2017-01-07 00-00-00</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">刷新间隔：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-model="post_span" required
-                           lay-verify="required|number" value="500" autocomplete="off" class="layui-input">
+                <label class="layui-form-label">地址栏：</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" v-model="textValue" placeholder="复制一坨链接之后同时打开" required lay-verify="required" class="layui-textarea"></textarea>
                 </div>
-                <div class="layui-form-mid layui-word-aux">提交的间隔时间，默认：500(ms)</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">提交地址：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-show="!is_post" v-model="post_url" required lay-verify="required|url" autocomplete="off" class="layui-input">
-                    <input type="text" name="title" disabled v-model="post_url_temp" v-show="is_post" autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid layui-word-aux">提交地址，举个栗子：【http://m.baidu.com/】</div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">窗口数目：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-model="post_window_count" required
-                           lay-verify="required|number" value="1" autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid layui-word-aux">开启的窗口数目 默认：1</div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">提交次数：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-model="post_count" required value="0" lay-verify="required|number"
-                           autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid layui-word-aux">指所有窗口的提交次数的总数 默认：0【无限次】</div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-input-block" v-if="!is_post">
-                    <button type="button" class="layui-btn layui-btn-normal" lay-submit lay-filter="post">定时提交</button>
-                </div>
-                <div class="layui-input-block" v-else>
-                    <button type="button" class="layui-btn layui-btn-warm" lay-submit lay-filter="post">取消提交</button>
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn" lay-submit lay-filter="open">马上打开</button>
+                    <button type="button" v-show="!is_post" class="layui-btn layui-btn-normal" lay-submit lay-filter="post">定时打开</button>
+                    <button type="button" v-show="is_post" class="layui-btn layui-btn-warm" lay-submit lay-filter="post">取消定时</button>
                 </div>
             </div>
         </div>
         <hr class="layui-bg-blue">
         <blockquote class="layui-elem-quote" v-show="is_post">
-            请根据下面窗口返回的显示内容判断提交的链接是否正确有效！
-            <br>已经开启定时,距离自动提交时间还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span> <span>{{count_down.second}}秒</span>
-            <br>已提交次数：{{has_post_count}}
+            <br>已经开启定时,距离自动打开网页还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span> <span>{{count_down.second}}秒</span>
         </blockquote>
-        <iframe style="width:370px; height:200px;" :src="post_url" v-show="is_post" frameborder="1"
-                v-for="item in post_window_arr"></iframe>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/layui.all.js"></script>
-<script type="text/javascript" src="js/submitter.js"></script>
+<script type="text/javascript" src="js/trigger.js"></script>
 </body>
 </html>

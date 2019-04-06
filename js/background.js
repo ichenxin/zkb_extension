@@ -10,6 +10,7 @@
         time: 5000,//监控间距
         popup_time: 5000,//弹窗通知时长
         notification: true,//是否开启通知
+        blacklist:"",
         listen: true,//是否开启监听
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一,0,1,元,货,流量"//关键词
     };
@@ -23,6 +24,7 @@
                 options.popup_time = obj.popup_time;
                 options.notification = obj.notification;
                 options.listen = obj.listen;
+                options.blacklist = obj.blacklist;
                 options.keywords = obj.keywords;
             }
             if (!options.listen) {//是否监听
@@ -98,12 +100,13 @@
 
     function findKeyWord(list) {
         if (!list[0]) return;
-        var arr = str2arr(options.keywords);
+        var arr = str2arr(options.keywords);//关键词
+        var blacklist = str2arr(options.blacklist);
         var _cache = [].concat(list);//数组复制
         for (var i = list.length - 1; i > -1; i--) {
             var _key = true;
             for (var j = 0; j < arr.length; j++) {
-                if (list[i].subject.indexOf(arr[j]) > 0) {
+                if (list[i].subject.indexOf(arr[j]) > 0 && blacklist.indexOf(list[i].author) !== 0) {
                     _key = false;
                     var obj = {
                         tid: list[i].tid,

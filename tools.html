@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>工具箱</title>
+    <link rel="stylesheet" href="css/tools.css">
+    <link rel="stylesheet" href="css/layui.css">
+    <style>
+        .logo {
+            position: absolute;
+            left: 75px;
+            top:0px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <a class="logo" href="javascript:void(0)">
+                <img src="img/icon.png" alt="layui">
+            </a>
+        </div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="list.html">监控</a></li>
+            <li class="layui-nav-item"><a href="nav.html">导航</a></li>
+            <li class="layui-nav-item layui-this"><a href="tools.html">工具箱</a></li>
+            <li class="layui-nav-item"><a href="options.html">设置</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <!--<li  class="layui-nav-item" style="margin-top: 10px;">-->
+            <!--<iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>-->
+            <!--</li>-->
+            <li class="layui-nav-item">
+                <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
+                    <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-container" style="min-height: 800px;">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="margin-bottom: 20px; text-align: center;">工具箱</legend>
+            <div class="layui-field-box">
+                <ul class="layui-row layui-col-space1">
+                    <li class="layui-col-sm4">
+                        <div class="alone"><a href="submitter.html" target="_blank">定时访问器</a></div>
+                    </li>
+                    <li class="layui-col-sm4">
+                        <div class="alone"><a href="trigger.html" target="_blank">网页多开器</a></div>
+                    </li>
+                    <li class="layui-col-sm4">
+                        <div class="alone"><a href="http://club.jd.com/myJdcomments/myJdcomments.action?sort=0" target="_blank">京东自动评价</a></div>
+                    </li>
+                    <li class="layui-col-sm4">
+                        <div class="alone"><a href="https://review.suning.com/my_cmmdty_review.do" target="_blank">苏宁自动评价</a></div>
+                    </li>
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+</div>
+</body>
+</html>
