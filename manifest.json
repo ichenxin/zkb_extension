@@ -35,11 +35,11 @@
         "<all_urls>"
       ],
       "js": [
-        "layx.min.js",
+        "js/layx.min.js",
         "js/jquery.min.js",
         "js/content-script.js"
       ],
-      "css":["layx.min.css"],
+      "css":["css/layx.min.css"],
       "run_at": "document_end"
     }
   ],
