@@ -77,7 +77,7 @@ function sendURL(url) {
                         <textarea id="copyInput" name="url" style="width:700px;height:300px;margin:10px auto;display: block">${url}</textarea>
                         <button id="btn-copy" style="display: inline-block;height: 38px;line-height: 38px;background-color: rgb(0, 150, 136);color: rgb(255, 255, 255);white-space: nowrap;text-align: center;font-size: 14px;cursor: pointer;padding: 0px 18px;border-width: initial;border-style: none;border-color: initial;border-image: initial;border-radius: 2px;">复制</button>
                     </div>
-                    <h3><a href="https://krapnikkk.github.io/frameSubmitter/" target="_blank">定时提交器【后期内嵌进去】</a></h3>
+                    <h3><a href="./submitter.html" target="_blank">定时提交器</a></h3>
                     </div>`;
     layx.html('dom', '图片二维码解码', content, {
         style: layx.multiLine(function () {/*
@@ -100,8 +100,65 @@ function sendURL(url) {
         var tag = document.execCommand("Copy");
         if (tag) {
             alert('已经将内容复制到粘贴板！');
-            window.open("https://krapnikkk.github.io/frameSubmitter/","_blank");
+            window.open("./submitter.html","_blank");
         }
     })
+}
 
+// 向页面注入JS
+function injectCustomJs(jsPath)
+{
+    jsPath = jsPath || 'js/inject.js';
+    var temp = document.createElement('script');
+    temp.setAttribute('type', 'text/javascript');
+    temp.setAttribute('charset', 'utf-8');
+    // 获得的地址类似：chrome-extension://ihcokhadfjfchaeagdoclpnjdiokfakg/js/inject.js
+    temp.src = chrome.extension.getURL(jsPath);
+    temp.onload = function()
+    {
+        // 放在页面不好看，执行完后移除掉
+        this.parentNode.removeChild(this);
+    };
+    document.head.appendChild(temp);
+}
+
+
+
+var url = window.location.href;
+if(url.indexOf('myJdcomment')>-1){
+    layx.confirm('插件提示','检测到您正在进行京东评价，是否自动评价？',null,{
+        buttons:[
+            {
+                label:'确定',
+                callback:function(id, button, event){
+                    injectCustomJs();
+                    layx.destroy(id);
+                }
+            },
+            {
+                label:'关闭',
+                callback:function(id, button, event){
+                    layx.destroy(id);
+                }
+            }
+        ]
+    });
+}else if(url.indexOf('my_cmmdty_review') > -1){
+    layx.confirm('插件提示','检测到您正在进行苏宁评价，是否自动评价？',null,{
+        buttons:[
+            {
+                label:'确定',
+                callback:function(id, button, event){
+                    injectCustomJs();
+                    layx.destroy(id);
+                }
+            },
+            {
+                label:'关闭',
+                callback:function(id, button, event){
+                    layx.destroy(id);
+                }
+            }
+        ]
+    });
 }
