@@ -391,17 +391,22 @@
 
 
     chrome.webRequest.onBeforeRequest.addListener(function (details) {
-        if (details.method === "POST" && details.url.indexOf('newBabelAwardCollection') > -1) {
-            var formData = details.requestBody.formData;
+        if (details.url.indexOf('newBabelAwardCollection') > -1) {
             var url = details.url;
-            if (formData) {
-                // console.log(url + parseObject(formData));
+            if(details.method === "POST"){
+                var formData = details.requestBody.formData;
+                if (formData) {
+                    chrome.tabs.getSelected(function (tabs) {
+                        url = url + parseObject(formData);
+                        var message = {'evt': 'url', 'url': url};
+                        chrome.tabs.sendRequest(tabs.id, message);
+                    })
+                }
+            }else if(details.method === "GET"){
                 chrome.tabs.getSelected(function (tabs) {
-                    url = url + parseObject(formData);
                     var message = {'evt': 'url', 'url': url};
                     chrome.tabs.sendRequest(tabs.id, message);
                 })
-
             }
         }
     }, {urls: ["<all_urls>"]}, ["requestBody"]);
@@ -416,6 +421,12 @@
         return str;
     }
 
+    // 监听来自content-script的消息
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
+    {
+        var src = chrome.extension.getURL("submitter.html");
+        chrome.tabs.create({url:src});
+    });
 
 
 })();

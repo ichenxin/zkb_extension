@@ -75,24 +75,22 @@ function sendURL(url) {
     var content = `<div style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;height:500px;">
                     <div class="layui-form-item">
                         <textarea id="copyInput" name="url" style="width:700px;height:300px;margin:10px auto;display: block">${url}</textarea>
-                        <button id="btn-copy" style="display: inline-block;height: 38px;line-height: 38px;background-color: rgb(0, 150, 136);color: rgb(255, 255, 255);white-space: nowrap;text-align: center;font-size: 14px;cursor: pointer;padding: 0px 18px;border-width: initial;border-style: none;border-color: initial;border-image: initial;border-radius: 2px;">复制</button>
+                        <button id="btn-copy" style="display: inline-block;height: 38px;line-height: 38px;background-color: rgb(0, 150, 136);color: rgb(255, 255, 255);white-space: nowrap;text-align: center;font-size: 14px;cursor: pointer;padding: 0px 18px;border-width: initial;border-style: none;border-color: initial;border-image: initial;border-radius: 2px;">复制并前往定时提交器</button>
                     </div>
-                    <h3><a href="./submitter.html" target="_blank">定时提交器</a></h3>
                     </div>`;
     layx.html('dom', '图片二维码解码', content, {
-        style: layx.multiLine(function () {/*
-                                #layx-radiu-style{
-                                    border-radius:20px;
-                                    -webkit-border-radius:20px;
-                                    -moz-border-radius:20px;
-                                    -ms-border-radius:20px;
-                                }
-
-                                #layx-radiu-style .layx-window-icon{
-                                    color:#5FB878;
-                                }
-
-                        */
+        style: layx.multiLine(function () {
+            /*
+                #layx-radiu-style{
+                    border-radius:20px;
+                    -webkit-border-radius:20px;
+                    -moz-border-radius:20px;
+                    -ms-border-radius:20px;
+                }
+                #layx-radiu-style .layx-window-icon{
+                    color:#5FB878;
+                }
+            */
         })
     });
     $('#btn-copy').on('click', function () {
@@ -100,10 +98,12 @@ function sendURL(url) {
         var tag = document.execCommand("Copy");
         if (tag) {
             alert('已经将内容复制到粘贴板！');
-            window.open("./submitter.html","_blank");
+            chrome.runtime.sendMessage({}, function(response) {
+            });
         }
     })
 }
+
 
 // 向页面注入JS
 function injectCustomJs(jsPath)
