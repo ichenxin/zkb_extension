@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "赚客吧论坛助手",
-  "version": "1.11",
+  "version": "1.12",
   "description": "赚客吧论坛助手",
   "author": "krapnik",
   "icons": {
@@ -14,7 +14,7 @@
     "default_popup": "popup.html"
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com; object-src 'self'",
-  "homepage_url": "https://github.com/krapnikkk",
+  "homepage_url": "https://krapnikkk.github.io/zkb_extension/",
   "permissions": [
     "tabs",
     "webRequest",
