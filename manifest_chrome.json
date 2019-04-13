@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "赚客吧论坛助手",
+  "version": "1.12",
+  "description": "赚客吧论坛助手",
+  "author": "krapnik",
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com; object-src 'self'",
+  "homepage_url": "https://krapnikkk.github.io/zkb_extension/",
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "*://*/*",
+    "notifications",
+    "storage",
+    "contextMenus"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/layx.min.js",
+        "js/jquery.min.js",
+        "js/content-script.js"
+      ],
+      "css":["css/layx.min.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": ["js/inject.js"]
+}
