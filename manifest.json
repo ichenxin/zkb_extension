@@ -15,6 +15,7 @@
   },
   "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com; object-src 'self'",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmBECI3EWhhh7CkrLjDtY83xcUwnwDgZaiDRmugl92JyqnHsYRWOspAhnnz0NHeo86MZA00xCKsM+mY+Idc6lgOAqJlscCDRZQnnop6lSmynsyOQHeBENUsasdjw4esBM1rqHWiv8C3P9luciqHTiwre5ZlKH7DaCZzSE2Bd+2Z4BG7cY54e+8vVCueNnBPbxyrDcm773ABA0XaunZrqkUCiG6Y12b3IqJ5UInjFOjkLCHGiRRXkrzDwKAW/YpdnK4A2xzk/ZAxdaHxX4pCil129WeUqe7fWCugSGrNxfi1gHcp491MpvfJUh4l9U7VgzjtU67bZX589ozeceOdpgkwIDAQAB",
   "homepage_url": "https://krapnikkk.github.io/zkb_extension/",
   "permissions": [
     "tabs",
