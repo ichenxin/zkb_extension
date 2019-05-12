@@ -7,7 +7,7 @@
         },
         type: 'relist',//最新主题
         count: 100,//监控列表数目
-        time: 5000,//监控间距
+        time: 10000,//监控间距
         popup_time: 5000,//弹窗通知时长
         notification: true,//是否开启通知
         blacklist:"",
@@ -308,7 +308,9 @@
                     }
                 }
             }
-            newArr = newArr.concat(arr);
+            if(newArr.length>0){
+                newArr = newArr.concat(arr);
+            }
         }
         return newArr;
     }

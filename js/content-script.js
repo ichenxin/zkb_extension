@@ -98,7 +98,7 @@ function sendURL(url) {
         var tag = document.execCommand("Copy");
         if (tag) {
             alert('已经将内容复制到粘贴板！');
-            chrome.runtime.sendMessage({}, function(response) {
+            chrome.runtime.sendMessage({}, function (response) {
             });
         }
     })
@@ -106,59 +106,88 @@ function sendURL(url) {
 
 
 // 向页面注入JS
-function injectCustomJs(jsPath)
-{
+function injectCustomJs(jsPath) {
     jsPath = jsPath || 'js/inject.js';
     var temp = document.createElement('script');
     temp.setAttribute('type', 'text/javascript');
     temp.setAttribute('charset', 'utf-8');
     // 获得的地址类似：chrome-extension://ihcokhadfjfchaeagdoclpnjdiokfakg/js/inject.js
     temp.src = chrome.extension.getURL(jsPath);
-    temp.onload = function()
-    {
+    temp.onload = function () {
         // 放在页面不好看，执行完后移除掉
         this.parentNode.removeChild(this);
     };
     document.head.appendChild(temp);
 }
 
+//向页面注入script
+function injectScript(js) {
+    var script = document.createElement('script');
+    script.innerHTML = js;
+    document.head.appendChild(script);
+}
 
 
 var url = window.location.href;
-if(url.indexOf('myJdcomment')>-1){
-    layx.confirm('插件提示','检测到您正在进行京东评价，是否自动评价？',null,{
-        buttons:[
+if (url.indexOf('myJdcomment') > -1) {
+    layx.confirm('插件提示', '检测到您正在进行京东评价，是否自动评价？', null, {
+        buttons: [
             {
-                label:'确定',
-                callback:function(id, button, event){
+                label: '确定',
+                callback: function (id, button, event) {
                     injectCustomJs();
                     layx.destroy(id);
                 }
             },
             {
-                label:'关闭',
-                callback:function(id, button, event){
+                label: '关闭',
+                callback: function (id, button, event) {
                     layx.destroy(id);
                 }
             }
         ]
     });
-}else if(url.indexOf('my_cmmdty_review') > -1){
-    layx.confirm('插件提示','检测到您正在进行苏宁评价，是否自动评价？',null,{
-        buttons:[
+} else if (url.indexOf('my_cmmdty_review') > -1) {
+    layx.confirm('插件提示', '检测到您正在进行苏宁评价，是否自动评价？', null, {
+        buttons: [
             {
-                label:'确定',
-                callback:function(id, button, event){
+                label: '确定',
+                callback: function (id, button, event) {
                     injectCustomJs();
                     layx.destroy(id);
                 }
             },
             {
-                label:'关闭',
-                callback:function(id, button, event){
+                label: '关闭',
+                callback: function (id, button, event) {
                     layx.destroy(id);
                 }
             }
         ]
     });
 }
+
+function getScript(){
+    $.ajax({
+        // url: chrome.extension.getURL('json/script.json'),
+        url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/script.json',
+        type: 'GET',
+        dataType: 'json',
+        timeout: 1000,
+        cache: false,
+        success: function (res) {
+            var data = res.data;
+            console.log(data);
+            chrome.storage.local.set({'script': JSON.stringify(data)}, function () {
+
+            });
+        },
+        error: function (e) {
+            // if (e.status === 404) {
+                alert('获取数据失败！请检查网络是否畅通！');
+            // }
+        }
+    });
+}
+
+getScript();

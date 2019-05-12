@@ -1,14 +1,14 @@
 (function () {
     var options = {
         count: 100,//监控列表数目
-        time: 5000,//监控间距
+        time: 10000,//监控间距
         popup_time: 5000,//监控时长
         notification: true,//是否开启通知
         listen: true,//是否开启监听
-        blacklist:"",
+        blacklist: "",
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一元,货,流量"//关键词
     };
-    var form = layui.form,layer = layui.layer;
+    var form = layui.form, layer = layui.layer;
     chrome.storage.local.get({'options': ''}, function (items) {
         if (items.options !== '') {
             var option = JSON.parse(items.options);
@@ -22,7 +22,6 @@
         list(options);
     });
 
-
     function list(options) {
         if (options.listen) {
             $('input[name="listen"]').prop("checked", true);
@@ -34,7 +33,7 @@
         }
         var popup_time = options.popup_time || 5000;
         $('.popup_time').val(popup_time);
-        var listen_time = options.time || 5000;
+        var listen_time = options.time || 10000;
         $('.listen_time').val(listen_time);
         var cache_count = options.count || 100;
         $('.cache_count').val(cache_count);
@@ -47,7 +46,7 @@
     function save() {
         var obj = {
             count: $('.cache_count').val() || 100,//监控列表数目
-            time: $('.listen_time').val() || 5000,//监控间距
+            time: $('.listen_time').val() || 10000,//监控间距
             popup_time: $('.popup_time').val() || 5000,//弹窗时长
             notification: options.notification,//是否开启通知
             listen: options.listen,//是否开启监听
@@ -68,7 +67,124 @@
         options.listen = this.checked;
     });
 
-
     $('.btn-save').on('click', save);
+
+    $('.btn-authorization').on('click', getUser);
+
+    function getUser() {
+        $.ajax({
+            url: 'http://www.zuanke8.com/api/mobile/index.php?sessionid=&version=4.1&zstamp=1552628345&module=zuixin&sign=1c6c5e06377fcc461226805e727e9908',
+            dataType: 'json',
+            type: 'POST',
+            xhrFields: {
+                withCredentials: true
+            },
+            data: options.data,
+            crossDomain: true,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (res) {
+                // console.log(res.data.member_username);
+                saveUser(res.data.member_username);
+            },
+            error: function (err) {
+                layer.msg('获取用户信息失败！');
+            }
+        });
+    }
+
+    function saveUser(str) {
+        chrome.storage.local.set({'nickname': str}, function () {
+            $('.btn-authorization').hide();
+            $('.nickname').show().html(str);
+            check(str);
+        });
+    }
+
+    function check(nickname) {
+        $.ajax({
+            url: 'http://krapnik.cn/api/check',
+            dataType: 'json',
+            type: 'POST',
+            xhrFields: {
+                withCredentials: true
+            },
+            data: {'nickname': nickname},
+            crossDomain: true,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (res) {
+                layer.msg(res.msg);
+                if (res.success) {
+                    saveActivate();
+                }
+            },
+            error: function (err) {
+                layer.msg('获取用户信息失败！');
+            }
+        });
+    }
+
+    function saveActivate() {
+        chrome.storage.local.set({'activate': true}, function () {
+            // layer.msg('保存成功！');
+            $('.activate-status').html('已激活');
+        });
+    }
+
+    function initUser() {
+        chrome.storage.local.get({'cdk_url': ''}, function (arg) {
+            $('.buy_link').attr('href',arg['cdk_url']);
+            chrome.storage.local.get({'nickname': ''}, function (items) {
+                if (items['nickname']) {
+                    $('.btn-authorization').hide();
+                    $('.nickname').show().html(items['nickname']);
+                }
+                chrome.storage.local.get({'activate': ''}, function (obj) {
+                    // layer.msg('保存成功！');
+                    if (obj['activate']) {
+                        $('.activate-status').html('已激活');
+                    }
+                });
+            });
+        });
+    }
+
+    initUser();
+
+    $('.btn-activate').on('click',login);
+
+    function login() {
+        var nickname, cdk = $('.cdk').val();
+        if(!cdk){
+            layer.msg('请先输入激活码！');
+            return;
+        }
+        chrome.storage.local.get({'nickname': ''}, function (items) {
+            if (items['nickname']) {
+                nickname = items['nickname'];
+                $.ajax({
+                    url: 'http://krapnik.cn/api/login',
+                    dataType: 'json',
+                    type: 'POST',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    data: {'nickname': nickname,'cdk':cdk},
+                    crossDomain: true,
+                    contentType: "application/x-www-form-urlencoded",
+                    success: function (res) {
+                        layer.msg(res.msg);
+                        if (res.success) {
+                            saveActivate();
+                        }
+                    },
+                    error: function (err) {
+                        layer.msg('获取用户信息失败！');
+                    }
+                });
+            }else{
+                layer.msg('请先获取登录账号进行激活码绑定！');
+            }
+        });
+    }
 
 })();

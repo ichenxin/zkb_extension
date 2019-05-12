@@ -70,7 +70,7 @@
     <div class="layui-tab">
         <ul class="layui-tab-title">
             <li class="layui-this">监控设置</li>
-            <li>其他管理</li>
+            <li>激活设置</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -84,7 +84,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">监控间隔</label>
                         <div class="layui-input-inline">
-                            <input type="number" name="span" required="" lay-vertype="tips" value=5000 autocomplete="off" class="layui-input listen_time" cheched>
+                            <input type="number" name="span" required="" lay-vertype="tips" value=10000 autocomplete="off" class="layui-input listen_time" cheched>
                         </div>
                         <div class="layui-form-mid layui-word-aux">监听帖子的间隔时间，单位：【毫秒】</div>
                     </div>
@@ -127,7 +127,37 @@
                     </div>
                 </form>
             </div>
-            <div class="layui-tab-item">建设中</div>
+            <div class="layui-tab-item">
+                <form class="layui-form" lay-filter="activate">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">当前帐号</label>
+                        <div class="layui-input-inline">
+                            <button class="layui-btn btn-authorization" type ="button">获取当前登录帐号</button>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux nickname"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">激活状态</label>
+                        <div class="layui-form-mid layui-word-aux activate-status">未激活</div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">激活码</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="cdk" required="" autocomplete="off" class="layui-input cdk">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">还没有激活码？<a class="buy_link" href="http://baidu.com" style="color:#FF5722" target="_blank">点击使用果果购买</a></div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label"></label>
+                        <div class="layui-form-mid layui-word-aux">激活前请确定已经登录赚吧账号，该激活码将会与帐号绑定在一起。</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn btn-activate" type ="button">激活</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

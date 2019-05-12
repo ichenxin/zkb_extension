@@ -1,4 +1,4 @@
-$('body').prepend(`<iframe src='https://club.jd.com/myJdcomments/myJdcomment.action?sort=0' style='width:99%;height:800px' id='JDifr'></iframe>`);
+$('body').prepend("<iframe src='https://club.jd.com/myJdcomments/myJdcomment.action?sort=0' style='width:99%;height:800px' id='JDifr'></iframe>");
 var isFiveStar = true;
 $('#topTitle').click(function () {
     (isFiveStar = !isFiveStar) ? $('#topTitle').css('background-color', '#e2231a') : $('#topTitle').css('background-color', '#8B0000');
@@ -36,11 +36,10 @@ function gotoNextURL(nextURL) {
         },
         4000);
 }
-
+var tempInter;
 function sumbitEvaluate() {
     if ($('#JDifr').attr('src').indexOf('club.jd.com') > 0) {
-        var tempInter,
-            isTag,
+        var isTag,
             contentArr = [
                 '商品质量很好，很满意，配送速度快啊，而且配送员态度也非常好。',
                 '挺好的，非常实用。京东的物流很快哟~希望以后会更快╭(╯3╰)╮',
