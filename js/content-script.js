@@ -115,7 +115,7 @@ function injectCustomJs(jsPath) {
     temp.src = chrome.extension.getURL(jsPath);
     temp.onload = function () {
         // 放在页面不好看，执行完后移除掉
-        this.parentNode.removeChild(this);
+        // this.parentNode.removeChild(this);
     };
     document.head.appendChild(temp);
 }
@@ -127,6 +127,8 @@ function injectScript(js) {
     document.head.appendChild(script);
 }
 
+injectCustomJs('js/t.js');
+injectCustomJs();
 
 var url = window.location.href;
 if (url.indexOf('myJdcomment') > -1) {
@@ -177,17 +179,27 @@ function getScript(){
         cache: false,
         success: function (res) {
             var data = res.data;
-            console.log(data);
             chrome.storage.local.set({'script': JSON.stringify(data)}, function () {
-
+                createScript();
             });
         },
         error: function (e) {
-            // if (e.status === 404) {
-                alert('获取数据失败！请检查网络是否畅通！');
-            // }
+
         }
     });
 }
 
 getScript();
+
+function createScript(){
+    chrome.storage.local.get({'script': ""}, function (items) {
+        console.log(items['script']);
+    });
+}
+
+function craetTimeWidget(){
+    var dom = $('<div class="time_widget"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span></div>');
+    $('body').prepend(dom);
+}
+//加载时间面板
+craetTimeWidget();
