@@ -1,17 +1,17 @@
 {
-  "author":"krapnik",
-  "data":
-          [
-            {
-              "id":1,
-              "name":"建行影火虫抢购脚本",
-              "url":"m.filmfly.cn/Hd/ccb221/a1",
-              "update_time":"20190427",
-              "active_time":"2019_03_01至2019_05_31",
-              "details_url":"https://mp.weixin.qq.com/s/nlsss2UMJjOOHk-5sqrpZQ",
-              "activate":1,
-              "show_time":1,
-              "content":"OnZhciB0MSx0Mjt0MT13aW5kb3cuc2V0SW50ZXJ2YWwoZ2V0VGltZSwxMDAwKTtmdW5jdGlvbiBnZXRUaW1lKCl7JC5hamF4KHt1cmw6JiMzOTtodHRwczovL2FwaS5tLmpkLmNvbS9jbGllbnQuYWN0aW9uP2Z1bmN0aW9uSWQ9YmFiZWxBY3Rpdml0eUdldFNoYXJlSW5mbyZjbGllbnQ9d2g1JmNhbGxiYWNrPWtyYXBuaWsmIzM5OyxkYXRhVHlwZToianNvbnAifSk7fWZ1bmN0aW9uIGtyYXBuaWsocmVzKXtpZih0cmFuc1RpbWUocmVzLnRpbWUpJmd0Oz05NTk1OSl7d2luZG93LmNsZWFySW50ZXJ2YWwodDEpO3QyPXdpbmRvdy5zZXRJbnRlcnZhbChwbGF5LmNoZWNrLDIwMDApO307fWZ1bmN0aW9uIGFkZDAobSl7cmV0dXJuIG0mbHQ7MTA/JiMzOTswJiMzOTsrbTptO31mdW5jdGlvbiB0cmFuc1RpbWUodGltZXN0YW1wKXt2YXIgdGltZT1uZXcgRGF0ZSgrdGltZXN0YW1wKSxoPXRpbWUuZ2V0SG91cnMoKSxtPXRpbWUuZ2V0TWludXRlcygpLHM9dGltZS5nZXRTZWNvbmRzKCk7cmV0dXJuIE51bWJlcihgJHthZGQwKGgpfSR7YWRkMChtKX0ke2FkZDAocyl9YCk7fQ=="
-            }
-          ]
+  "author": "krapnik",
+  "data": [
+    {
+      "id": 1,
+      "name": "建行影火虫抢购脚本",
+      "url": "m.filmfly.cn/Hd/ccb221/a1",
+      "update_time": "20190427",
+      "active_time": "2019_03_01至2019_05_31",
+      "details_url": "https://mp.weixin.qq.com/s/nlsss2UMJjOOHk-5sqrpZQ",
+      "switch": 1,
+      "activate": 1,
+      "show_time": 1,
+      "content": "OnZhciB0MSx0Mjt0MT13aW5kb3cuc2V0SW50ZXJ2YWwoZ2V0VGltZSwxMDAwKTtmdW5jdGlvbiBnZXRUaW1lKCl7JC5hamF4KHt1cmw6JiMzOTtodHRwczovL2FwaS5tLmpkLmNvbS9jbGllbnQuYWN0aW9uP2Z1bmN0aW9uSWQ9YmFiZWxBY3Rpdml0eUdldFNoYXJlSW5mbyZjbGllbnQ9d2g1JmNhbGxiYWNrPWtyYXBuaWsmIzM5OyxkYXRhVHlwZToianNvbnAifSk7fWZ1bmN0aW9uIGtyYXBuaWsocmVzKXtpZih0cmFuc1RpbWUocmVzLnRpbWUpJmd0Oz05NTk1OSl7d2luZG93LmNsZWFySW50ZXJ2YWwodDEpO3QyPXdpbmRvdy5zZXRJbnRlcnZhbChwbGF5LmNoZWNrLDIwMDApO307fWZ1bmN0aW9uIGFkZDAobSl7cmV0dXJuIG0mbHQ7MTA/JiMzOTswJiMzOTsrbTptO31mdW5jdGlvbiB0cmFuc1RpbWUodGltZXN0YW1wKXt2YXIgdGltZT1uZXcgRGF0ZSgrdGltZXN0YW1wKSxoPXRpbWUuZ2V0SG91cnMoKSxtPXRpbWUuZ2V0TWludXRlcygpLHM9dGltZS5nZXRTZWNvbmRzKCk7cmV0dXJuIE51bWJlcihgJHthZGQwKGgpfSR7YWRkMChtKX0ke2FkZDAocyl9YCk7fQ=="
+    }
+  ]
 }
