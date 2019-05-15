@@ -45,5 +45,5 @@
       "run_at": "document_end"
     }
   ],
-  "web_accessible_resources": ["js/inject.js"]
+  "web_accessible_resources": ["js/t.js","js/inject.js"]
 }

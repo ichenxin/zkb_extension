@@ -202,4 +202,4 @@ function craetTimeWidget(){
     $('body').prepend(dom);
 }
 //加载时间面板
-craetTimeWidget();
+// craetTimeWidget();
