@@ -10,7 +10,7 @@
         time: 10000,//监控间距
         popup_time: 5000,//弹窗通知时长
         notification: true,//是否开启通知
-        blacklist:"",
+        blacklist: "",
         listen: true,//是否开启监听
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一,0,1,元,货,流量"//关键词
     };
@@ -45,7 +45,7 @@
             for (var i = 0; i < notifications.length; i++) {
                 var obj = notifications[i];
                 if (!obj.flag) {
-                    notification(obj.tid, obj.msg,obj.cate);
+                    notification(obj.tid, obj.msg, obj.cate);
                     notifications[i].flag = true;
                 }
             }
@@ -53,27 +53,27 @@
         }
     }
 
-    var t2,now;
+    var t2, now;
 
-    Date.prototype.format = function(fmt) {
+    Date.prototype.format = function (fmt) {
         var o = {
-            "M+" : this.getMonth()+1,                 //月份
-            "d+" : this.getDate(),                    //日
-            "h+" : this.getHours(),                   //小时
-            "m+" : this.getMinutes(),                 //分
-            "s+" : this.getSeconds(),                 //秒
-            "q+" : Math.floor((this.getMonth()+3)/3), //季度
-            "S"  : this.getMilliseconds()             //毫秒
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
         };
-        if(/(y+)/.test(fmt))
-            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
-        for(var k in o)
-            if(new RegExp("("+ k +")").test(fmt))
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length===1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        if (/(y+)/.test(fmt))
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     }
 
-    function notification(id, msg,cate) {
+    function notification(id, msg, cate) {
         chrome.notifications.create(null, {
             type: 'basic',
             iconUrl: 'img/icon.png',
@@ -111,7 +111,7 @@
                     var obj = {
                         tid: list[i].tid,
                         msg: list[i].subject,
-                        cate:list[i].fname,
+                        cate: list[i].fname,
                         flag: false
                     };
                     notificationPush(obj);
@@ -195,14 +195,14 @@
 
     function isNew(date) {
         now = new Date().format("yyyy-MM-dd hh:mm:ss");
-        if (now.indexOf(date.substring(0,4)) > -1) {
+        if (now.indexOf(date.substring(0, 4)) > -1) {
             return true;
         }
         return false
     }
 
     //保存所有赚客大家谈数据【新旧数据合并】
-    function save_thread(data){
+    function save_thread(data) {
         var obj = {};
         obj['thread'] = '';
         chrome.storage.local.get(obj, function (items) {
@@ -216,7 +216,7 @@
     }
 
     //清洗数据
-    function clear_thread(){
+    function clear_thread() {
         var obj = {};
         obj['thread'] = '';
         chrome.storage.local.get(obj, function (items) {
@@ -224,14 +224,14 @@
             threads = JSON.parse(threads);
             for (var i = threads.length; i > -1; i--) {
                 var thread = threads[i];
-                if(thread){
+                if (thread) {
                     var fname = thread.fname;
-                    if(fname!=="赚客大家谈"){//栏目清洗
-                        threads.splice(i,1);
-                    }else{
+                    if (fname !== "赚客大家谈") {//栏目清洗
+                        threads.splice(i, 1);
+                    } else {
                         var addtime = thread.addtime;
-                        if(!compareTime(addtime)){//时间清洗
-                            threads.splice(i,1);
+                        if (!compareTime(addtime)) {//时间清洗
+                            threads.splice(i, 1);
                         }
                     }
                 }
@@ -240,14 +240,14 @@
         });
     }
 
-    function compareTime(time){
-        if(now.indexOf(time.substring(0,3)) === -1){//日月校验 当日有效,第二天的数据直接清空
+    function compareTime(time) {
+        if (now.indexOf(time.substring(0, 3)) === -1) {//日月校验 当日有效,第二天的数据直接清空
             return false;
         }
-        var thread_hour = +time.substring(6,8),hour = new Date().getHours(),
-            tread_minutes = +time.substring(9,11),minutes = new Date().getMinutes() ;
-        var thread_time = thread_hour*60 + tread_minutes,now_time = hour*60 + minutes;
-        if(Math.abs(now_time-thread_time)>60){//小时校验
+        var thread_hour = +time.substring(6, 8), hour = new Date().getHours(),
+            tread_minutes = +time.substring(9, 11), minutes = new Date().getMinutes();
+        var thread_time = thread_hour * 60 + tread_minutes, now_time = hour * 60 + minutes;
+        if (Math.abs(now_time - thread_time) > 60) {//小时校验
             return false
         }
         return true;
@@ -308,7 +308,7 @@
                     }
                 }
             }
-            if(newArr.length>0){
+            if (newArr.length > 0 && arr) {
                 newArr = newArr.concat(arr);
             }
         }
@@ -395,7 +395,7 @@
     chrome.webRequest.onBeforeRequest.addListener(function (details) {
         if (details.url.indexOf('newBabelAwardCollection') > -1) {
             var url = details.url;
-            if(details.method === "POST"){
+            if (details.method === "POST") {
                 var formData = details.requestBody.formData;
                 if (formData) {
                     chrome.tabs.getSelected(function (tabs) {
@@ -404,7 +404,7 @@
                         chrome.tabs.sendRequest(tabs.id, message);
                     })
                 }
-            }else if(details.method === "GET"){
+            } else if (details.method === "GET") {
                 chrome.tabs.getSelected(function (tabs) {
                     var message = {'evt': 'url', 'url': url};
                     chrome.tabs.sendRequest(tabs.id, message);
@@ -424,10 +424,9 @@
     }
 
     // 监听来自content-script的消息
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-    {
+    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         var src = chrome.extension.getURL("submitter.html");
-        chrome.tabs.create({url:src});
+        chrome.tabs.create({url: src});
     });
 
 

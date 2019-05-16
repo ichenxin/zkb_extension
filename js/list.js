@@ -9,6 +9,9 @@ $(function () {
     });
 
     function list(res) {
+        if (!res) {
+            return;
+        }
         var data = JSON.parse(res);
         var ul = $('.fly-list'), li, a, title, info, nickname, views, replies;
         ul.empty();
@@ -32,14 +35,23 @@ $(function () {
         add_rate();
     });
 
+    //清除缓存
+    $('.btn-clear').on('click', function () {
+        chrome.storage.local.set({'thread': ''}, function (items) {
+            chrome.storage.local.set({'relist': ''}, function (items) {
+                layer.msg('缓存清除完毕！');
+            });
+        });
+    });
+
     //获取rate
     function add_rate() {
         var obj = {};
         obj['thread'] = '';
         chrome.storage.local.get(obj, function (items) {
             var threads = items['thread'];
-            threads = JSON.parse(threads);
-            if (threads) {
+            if (threads && threads !== '""'&& threads !== "[]") {
+                threads = JSON.parse(threads);
                 $('.btn-rate').addClass('layui-btn-disabled');
                 var len = threads.length, counter = 0;
                 for (var i = 0; i < len; i++) {
@@ -81,6 +93,9 @@ $(function () {
                                     get('thread', sort_rate);
                                     $('.btn-rate').removeClass('layui-btn-disabled');
                                 }
+                            },
+                            error: function (err) {
+                                layer.msg('请求失败！，请稍后再尝试！');
                             }
                         });
 

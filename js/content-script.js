@@ -104,7 +104,6 @@ function sendURL(url) {
     })
 }
 
-
 // 向页面注入JS
 function injectCustomJs(jsPath) {
     jsPath = jsPath || 'js/inject.js';
@@ -127,8 +126,8 @@ function injectScript(js) {
     document.head.appendChild(script);
 }
 
-injectCustomJs('js/t.js');
-injectCustomJs();
+
+
 
 var url = window.location.href;
 if (url.indexOf('myJdcomment') > -1) {
@@ -169,7 +168,7 @@ if (url.indexOf('myJdcomment') > -1) {
     });
 }
 
-function getScript(){
+function getScript() {
     $.ajax({
         // url: chrome.extension.getURL('json/script.json'),
         url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/script.json',
@@ -189,17 +188,50 @@ function getScript(){
     });
 }
 
+injectCustomJs('js/t.js');
 getScript();
 
-function createScript(){
+function createScript() {
     chrome.storage.local.get({'script': ""}, function (items) {
-        console.log(items['script']);
+        var data = JSON.parse(items['script']);
+        chrome.storage.local.get({'activate': ''}, function (args) {
+            var activate = Boolean(args['activate']);
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                if (obj.switch) {
+                    if (obj.activate == activate) {//activate
+                        if (window.location.href.indexOf(obj.url) > -1) {//url
+                            if (obj['show_time']) {
+                                craetTimeWidget();//加载时间面板
+                                injectCustomJs();
+                            }
+                            var fn = window.atob(obj.content);
+                            fn = unescapeHTML(fn);
+                            if (fn) {
+                                try {
+                                    eval(fn);
+                                }
+                                catch (e) {
+                                    console.log(e);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
     });
 }
 
-function craetTimeWidget(){
-    var dom = $('<div class="time_widget"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span></div>');
+
+function craetTimeWidget() {
+    var dom = $('<div class="time_widget" style="width:300px;height:100px; background-color: #f6f6f6; position: absolute;z-index:99999;"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span></div>');
     $('body').prepend(dom);
 }
-//加载时间面板
-// craetTimeWidget();
+craetTimeWidget();
+injectCustomJs();
+
+function unescapeHTML(a) {
+    a = "" + a;
+    return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+}
