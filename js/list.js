@@ -96,6 +96,8 @@ $(function () {
                             },
                             error: function (err) {
                                 layer.msg('请求失败！，请稍后再尝试！');
+                                $('.btn-rate').removeClass('layui-btn-disabled');
+                                $('.rate-list-details').html('请求失败！，请稍后再尝试！');
                             }
                         });
 
@@ -103,7 +105,7 @@ $(function () {
                     })(i);
                 }
             } else {
-                alert('暂未监听到任何数据！');
+                alert('暂未监听到任何数据！数据过滤中或请求太频繁！请稍后再尝试~');
             }
         });
     }

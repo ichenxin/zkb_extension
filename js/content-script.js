@@ -119,55 +119,48 @@ function injectCustomJs(jsPath) {
     document.head.appendChild(temp);
 }
 
-//向页面注入script
-function injectScript(js) {
-    var script = document.createElement('script');
-    script.innerHTML = js;
-    document.head.appendChild(script);
-}
+// var url = window.location.href;
+// if (url.indexOf('myJdcomment') > -1) {
+//     layx.confirm('插件提示', '检测到您正在进行京东评价，是否自动评价？', null, {
+//         buttons: [
+//             {
+//                 label: '确定',
+//                 callback: function (id, button, event) {
+//                     injectCustomJs();
+//                     layx.destroy(id);
+//                 }
+//             },
+//             {
+//                 label: '关闭',
+//                 callback: function (id, button, event) {
+//                     layx.destroy(id);
+//                 }
+//             }
+//         ]
+//     });
+// } else if (url.indexOf('my_cmmdty_review') > -1) {
+//     layx.confirm('插件提示', '检测到您正在进行苏宁评价，是否自动评价？', null, {
+//         buttons: [
+//             {
+//                 label: '确定',
+//                 callback: function (id, button, event) {
+//                     injectCustomJs();
+//                     layx.destroy(id);
+//                 }
+//             },
+//             {
+//                 label: '关闭',
+//                 callback: function (id, button, event) {
+//                     layx.destroy(id);
+//                 }
+//             }
+//         ]
+//     });
+// }
 
-
-
-
-var url = window.location.href;
-if (url.indexOf('myJdcomment') > -1) {
-    layx.confirm('插件提示', '检测到您正在进行京东评价，是否自动评价？', null, {
-        buttons: [
-            {
-                label: '确定',
-                callback: function (id, button, event) {
-                    injectCustomJs();
-                    layx.destroy(id);
-                }
-            },
-            {
-                label: '关闭',
-                callback: function (id, button, event) {
-                    layx.destroy(id);
-                }
-            }
-        ]
-    });
-} else if (url.indexOf('my_cmmdty_review') > -1) {
-    layx.confirm('插件提示', '检测到您正在进行苏宁评价，是否自动评价？', null, {
-        buttons: [
-            {
-                label: '确定',
-                callback: function (id, button, event) {
-                    injectCustomJs();
-                    layx.destroy(id);
-                }
-            },
-            {
-                label: '关闭',
-                callback: function (id, button, event) {
-                    layx.destroy(id);
-                }
-            }
-        ]
-    });
-}
-
+/**
+ * 拉取脚本列表
+ */
 function getScript() {
     $.ajax({
         // url: chrome.extension.getURL('json/script.json'),
@@ -188,9 +181,9 @@ function getScript() {
     });
 }
 
-injectCustomJs('js/t.js');
-getScript();
-
+/**
+ * 构建insert脚本
+ */
 function createScript() {
     chrome.storage.local.get({'script': ""}, function (items) {
         var data = JSON.parse(items['script']);
@@ -199,7 +192,7 @@ function createScript() {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];
                 if (obj.switch) {
-                    if (obj.activate == activate) {//activate
+                    if (obj.activate == activate || ) {//activate
                         if (window.location.href.indexOf(obj.url) > -1) {//url
                             if (obj['show_time']) {
                                 craetTimeWidget();//加载时间面板
@@ -223,15 +216,23 @@ function createScript() {
     });
 }
 
-
+/**
+ * 创建时间控件
+ */
 function craetTimeWidget() {
     var dom = $('<div class="time_widget" style="width:300px;height:100px; background-color: #f6f6f6; position: absolute;z-index:99999;"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span></div>');
     $('body').prepend(dom);
 }
-craetTimeWidget();
-injectCustomJs();
 
+/**
+ * 过滤html转义符
+ * @param a
+ * @returns {string}
+ */
 function unescapeHTML(a) {
     a = "" + a;
     return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
 }
+
+injectCustomJs('js/t.js');
+getScript();
