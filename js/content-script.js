@@ -156,7 +156,7 @@ function createScript() {
                     if (Boolean(obj['activate']) === activate || obj['free'] === 1) {//activate||free
                         if (window.location.href.indexOf(obj.url) > -1) {//url
                             if (obj['show_time']) {
-                                craetTimeWidget(obj['name'],obj['intro']);//加载时间面板
+                                craetTimeWidget(obj['name'], obj['intro']);//加载时间面板
                                 injectCustomJs();
                             }
                             var fn = b64_to_utf8(obj.content);
@@ -179,8 +179,8 @@ function createScript() {
 /**
  * 创建时间控件
  */
-function craetTimeWidget(name,intro) {
-    var dom = $(`<div class="time_widget" style="width:300px;height:100px; background-color: #f6f6f6; position: absolute;z-index:99999;"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span><h4>${name}</h4><p>${intro}</p></div>`);
+function craetTimeWidget(name, intro) {
+    var dom = $(`<div class="time_widget" style="width:300px;height:100px; text-align:center;background-color: #f6f6f6; position: fixed;top:0px;z-index:99999;"><div><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:18px">北京时间:</a> <span id="Beijing_z43d" style="font-size:18px"></span></div><h2>${name}</h2><p>${intro}</p></div>`);
     $('body').prepend(dom);
 }
 
