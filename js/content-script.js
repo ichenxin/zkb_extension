@@ -192,14 +192,14 @@ function createScript() {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];
                 if (obj.switch) {
-                    if (obj.activate == activate || ) {//activate
+                    if (Boolean(obj['activate']) === activate || obj['free'] === 1) {//activate||free
                         if (window.location.href.indexOf(obj.url) > -1) {//url
                             if (obj['show_time']) {
                                 craetTimeWidget();//加载时间面板
                                 injectCustomJs();
                             }
                             var fn = window.atob(obj.content);
-                            fn = unescapeHTML(fn);
+                            fn = utf8_to_b64(fn);
                             if (fn) {
                                 try {
                                     eval(fn);
@@ -224,14 +224,9 @@ function craetTimeWidget() {
     $('body').prepend(dom);
 }
 
-/**
- * 过滤html转义符
- * @param a
- * @returns {string}
- */
-function unescapeHTML(a) {
-    a = "" + a;
-    return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+function utf8_to_b64( str ) {
+    return window.btoa(unescape(encodeURIComponent( str )));
+
 }
 
 injectCustomJs('js/t.js');
