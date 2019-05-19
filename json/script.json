@@ -4,10 +4,10 @@
     {
       "id": 1,
       "name": "京东自动评价脚本",
-      "url": "home.jd.com/url?from=krapnik",
+      "url": "home.jd.com/from=krapnik",
       "update_time": "20190427",
       "active_time": "永久有效",
-      "details_url": "https://home.jd.com/url?from=krapnik",
+      "details_url": "https://home.jd.com/from=krapnik",
       "switch": 1,
       "activate": 0,
       "free":1,
