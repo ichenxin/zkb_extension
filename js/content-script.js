@@ -119,45 +119,6 @@ function injectCustomJs(jsPath) {
     document.head.appendChild(temp);
 }
 
-// var url = window.location.href;
-// if (url.indexOf('myJdcomment') > -1) {
-//     layx.confirm('插件提示', '检测到您正在进行京东评价，是否自动评价？', null, {
-//         buttons: [
-//             {
-//                 label: '确定',
-//                 callback: function (id, button, event) {
-//                     injectCustomJs();
-//                     layx.destroy(id);
-//                 }
-//             },
-//             {
-//                 label: '关闭',
-//                 callback: function (id, button, event) {
-//                     layx.destroy(id);
-//                 }
-//             }
-//         ]
-//     });
-// } else if (url.indexOf('my_cmmdty_review') > -1) {
-//     layx.confirm('插件提示', '检测到您正在进行苏宁评价，是否自动评价？', null, {
-//         buttons: [
-//             {
-//                 label: '确定',
-//                 callback: function (id, button, event) {
-//                     injectCustomJs();
-//                     layx.destroy(id);
-//                 }
-//             },
-//             {
-//                 label: '关闭',
-//                 callback: function (id, button, event) {
-//                     layx.destroy(id);
-//                 }
-//             }
-//         ]
-//     });
-// }
-
 /**
  * 拉取脚本列表
  */
@@ -195,7 +156,7 @@ function createScript() {
                     if (Boolean(obj['activate']) === activate || obj['free'] === 1) {//activate||free
                         if (window.location.href.indexOf(obj.url) > -1) {//url
                             if (obj['show_time']) {
-                                craetTimeWidget();//加载时间面板
+                                craetTimeWidget(obj['name'],obj['intro']);//加载时间面板
                                 injectCustomJs();
                             }
                             var fn = b64_to_utf8(obj.content);
@@ -218,8 +179,8 @@ function createScript() {
 /**
  * 创建时间控件
  */
-function craetTimeWidget() {
-    var dom = $('<div class="time_widget" style="width:300px;height:100px; background-color: #f6f6f6; position: absolute;z-index:99999;"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span></div>');
+function craetTimeWidget(name,intro) {
+    var dom = $(`<div class="time_widget" style="width:300px;height:100px; background-color: #f6f6f6; position: absolute;z-index:99999;"><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:24px">北京时间:</a> <span id="Beijing_z43d" style="font-size:24px"></span><h4>${name}</h4><p>${intro}</p></div>`);
     $('body').prepend(dom);
 }
 

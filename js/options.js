@@ -67,10 +67,6 @@
         options.listen = this.checked;
     });
 
-    $('.btn-save').on('click', save);
-
-    $('.btn-authorization').on('click', getUser);
-
     function getUser() {
         $.ajax({
             url: 'http://www.zuanke8.com/api/mobile/index.php?sessionid=&version=4.1&zstamp=1552628345&module=zuixin&sign=1c6c5e06377fcc461226805e727e9908',
@@ -148,10 +144,6 @@
         });
     }
 
-    initUser();
-
-    $('.btn-activate').on('click',login);
-
     function login() {
         var nickname, cdk = $('.cdk').val();
         if(!cdk){
@@ -186,5 +178,13 @@
             }
         });
     }
+
+    initUser();
+
+    $('.btn-activate').on('click',login);
+
+    $('.btn-save').on('click', save);
+
+    $('.btn-authorization').on('click', getUser);
 
 })();
