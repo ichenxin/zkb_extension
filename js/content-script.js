@@ -119,6 +119,13 @@ function injectCustomJs(jsPath) {
     document.head.appendChild(temp);
 }
 
+//向页面注入script
+function injectScript(js) {
+    var script = document.createElement('script');
+    script.innerHTML = js;
+    document.head.appendChild(script);
+}
+
 /**
  * 拉取脚本列表
  */
@@ -155,18 +162,28 @@ function createScript() {
                 if (obj.switch) {
                     if (Boolean(obj['activate']) === activate || obj['free'] === 1) {//activate||free
                         if (window.location.href.indexOf(obj.url) > -1) {//url
-                            if (obj['show_time']) {
-                                craetTimeWidget(obj['name'], obj['intro']);//加载时间面板
-                                injectCustomJs();
-                            }
                             var fn = b64_to_utf8(obj.content);
-                            if (fn) {
+                            //脚本类型： 0:自执行eval 1:自执行injectScript 2：点击执行
+                            if (obj.type === 0) {
+                                if (obj['show_time']) {
+                                    craetTimeWidget(obj['name'], obj['intro']);//加载时间面板
+                                    injectCustomJs();
+                                }
                                 try {
                                     eval(fn);
                                 }
                                 catch (e) {
                                     console.log(e);
                                 }
+                            } else if (obj.type === 1) {
+                                if (obj['show_time']) {
+                                    craetTimeWidget(obj['name'], obj['intro']);//加载时间面板
+                                    injectCustomJs();
+                                }
+                                injectScript(fn);
+                            } else if (obj.type === 2) {
+                                craetTimeWidget(obj['name'], obj['intro'],fn);//加载时间面板
+                                injectCustomJs();
                             }
                         }
                     }
@@ -179,8 +196,13 @@ function createScript() {
 /**
  * 创建时间控件
  */
-function craetTimeWidget(name, intro) {
-    var dom = $(`<div class="time_widget" style="width:300px;height:100px; text-align:center;background-color: #f6f6f6; position: fixed;top:0px;z-index:99999;"><div><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:18px">北京时间:</a> <span id="Beijing_z43d" style="font-size:18px"></span></div><h2>${name}</h2><p>${intro}</p></div>`);
+function craetTimeWidget(name, intro, script) {
+    var dom;
+    if (script) {
+        dom = $(`<div class="time_widget" style="width:300px;text-align:center;background-color: #f6f6f6; position: fixed;top:0px;z-index:99999;"><div><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:18px">北京时间:</a> <span id="Beijing_z43d" style="font-size:18px"></span></div><h2>${name}</h2><p>${intro}</p><button style="background-color:#000;width:100px;margin:5px;color:#fff" onclick='${script}'>开启脚本</button></div>`);
+    } else {
+        dom = $(`<div class="time_widget" style="width:300px;text-align:center;background-color: #f6f6f6; position: fixed;top:0px;z-index:99999;"><div><a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:18px">北京时间:</a> <span id="Beijing_z43d" style="font-size:18px"></span></div><h2>${name}</h2><p>${intro}</p></div>`);
+    }
     $('body').prepend(dom);
 }
 
