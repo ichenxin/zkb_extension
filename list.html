@@ -29,8 +29,7 @@
 
         .logo {
             position: absolute;
-            left: 12px;
-            top: 8px;
+            left: 75px;
         }
 
         .logo img {
@@ -53,10 +52,13 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header header header-doc">
-        <div class="layui-main">
-            <a class="logo" href="javascript:void(0)">
-                <img src="img/icon.png" alt="layui">
-            </a>
+        <!--<div class="layui-main">-->
+            <div class="layui-logo">
+                <a class="logo" href="javascript:void(0)">
+                    <img src="img/icon.png" alt="layui">
+                </a>
+            </div>
+
             <ul class="layui-nav layui-layout-left">
                 <li class="layui-nav-item layui-this"><a href="#">监控</a></li>
                 <li class="layui-nav-item"><a href="nav.html">导航</a></li>
@@ -74,7 +76,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        <!--</div>-->
     </div>
     <div class="layui-tab layui-tab-brief" lay-filter="list">
         <ul class="layui-tab-title" style="border-color:#1E9FFF">

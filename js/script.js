@@ -1,6 +1,6 @@
 $(function () {
 //获取数据
-    var content, item, row, body = $('.layui-tab'), col,
+    var content, item, row, body = $('.layui-tab-content'), col,
         card, card_header, card_body;
     $.ajax({
         url: './json/script.json',
@@ -22,7 +22,7 @@ $(function () {
                 card = $(`<div class="layui-card"></div>`);
                 col.append(card);
                 card_header = $(`<div class="layui-card-header">${item.name}</div>`);
-                card_body = $(`<div class="layui-card-body"><p>使用有效期：${item.active_time}</p><p><span>是否可用：${item.switch ===1?'是':'否'}</span><span style="margin-left:40px">需要激活：${item.activate ===1?'是':'否'}</span></p><p class="layui-card-conetnt">${item.intro}</p><div class="layui-btn-container"><a href="${item.details_url}" target="_blank"><button class="layui-btn layui-btn-sm layui-btn-radius">前往使用</button></a></div></div>`);
+                card_body = $(`<div class="layui-card-body"><p>使用有效期：${item.active_time}</p><p><span>是否可用：${item.switch ===1?'是':'否'}</span><span style="margin-left:20px">需要激活：${item.activate ===1?'是':'否'}</span></p><p class="layui-card-conetnt">${item.intro}</p><div class="layui-btn-container"><a href="${item.details_url}" target="_blank"><button class="layui-btn layui-btn-sm layui-btn-radius">前往使用</button></a></div></div>`);
                 card.append(card_header, card_body);
 
                 // }
