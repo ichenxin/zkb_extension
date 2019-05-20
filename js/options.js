@@ -80,7 +80,13 @@
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
                 // console.log(res.data.member_username);
-                saveUser(res.data.member_username);
+                if(res.data.member_username){
+                    saveUser(res.data.member_username);
+                }else{
+                    layer.msg('获取用户信息失败！请先登录账号！');
+                    window.open("http://www.zuanke8.com/member.php?mod=logging&action=login");
+                }
+
             },
             error: function (err) {
                 layer.msg('获取用户信息失败！');
