@@ -17,55 +17,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="options.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/options.js">
+      <file leaf-file-name="tools.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4301">
-              <caret line="187" column="49" lean-forward="false" selection-start-line="187" selection-start-column="49" selection-end-line="187" selection-end-column="49" />
+            <state relative-caret-position="1311">
+              <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ads.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ads.js">
+      <file leaf-file-name="submitter.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/submitter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            <state relative-caret-position="897">
+              <caret line="39" column="83" lean-forward="false" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ads.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json/ads.json">
+      <file leaf-file-name="trigger.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trigger.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="920">
+              <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="options.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3818">
-              <caret line="166" column="42" lean-forward="false" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="60" column="64" lean-forward="true" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
-              <folding>
-                <marker date="1558189742020" expanded="true" signature="6959:7272" ph="..." />
-                <marker date="1558189742020" expanded="false" signature="7182:7209" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,54 +51,53 @@
         <entry file="file://$PROJECT_DIR$/json/info.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+              <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="838">
+              <caret line="85" column="8" lean-forward="false" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content-script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/content-script.js">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="158" column="70" lean-forward="false" selection-start-line="158" selection-start-column="70" selection-end-line="158" selection-end-column="70" />
+            <state relative-caret-position="529">
+              <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="37" />
               <folding>
-                <element signature="n#!!block;n#qrcodeMaker#0" expanded="false" />
-                <element signature="n#!!block;n#sendURL#0" expanded="false" />
-                <element signature="n#!!block;n#injectCustomJs#0" expanded="false" />
-                <element signature="n#!!block;n#getScript#0" expanded="false" />
-                <marker date="1558277901360" expanded="true" signature="887:978" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="1102:1193" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="2286:2347" ph="..." />
-                <marker date="1558277901360" expanded="false" signature="3109:3200" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="3201:3830" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="3251:3803" ph="..." />
-                <marker date="1558277901360" expanded="false" signature="3320:3376" ph="..." />
-                <marker date="1558277901360" expanded="false" signature="3449:3756" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="7050:7136" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="7212:7226" ph="..." />
-                <marker date="1558277901360" expanded="true" signature="7269:7283" ph="..." />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1558362085824" expanded="false" signature="2692:2735" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inject.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/inject.js">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="46">
+              <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+              <folding>
+                <marker date="1558364607553" expanded="true" signature="1092:1108" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,8 +105,18 @@
       <file leaf-file-name="script.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/json/script.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="935">
+              <caret line="57" column="1142" lean-forward="false" selection-start-line="57" selection-start-column="1142" selection-end-line="57" selection-end-column="1142" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/nav.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -141,16 +127,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showInfo</find>
-      <find>isTag</find>
       <find>subject</find>
       <find>black</find>
       <find>keywords</find>
@@ -179,6 +163,8 @@
       <find>thread</find>
       <find>'thread'</find>
       <find>threads</find>
+      <find>body</find>
+      <find>layui-card-header</find>
     </findStrings>
     <replaceStrings>
       <replace>20px</replace>
@@ -214,30 +200,31 @@
         <option value="$PROJECT_DIR$/js/vue.js" />
         <option value="$PROJECT_DIR$/js/submitter.js" />
         <option value="$PROJECT_DIR$/js/trigger.js" />
-        <option value="$PROJECT_DIR$/nav.html" />
-        <option value="$PROJECT_DIR$/trigger.html" />
         <option value="$PROJECT_DIR$/css/tools.css" />
-        <option value="$PROJECT_DIR$/tools.html" />
-        <option value="$PROJECT_DIR$/submitter.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/css/app.css" />
-        <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/json/scripts.json" />
         <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/js/t.js" />
-        <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/list.html" />
         <option value="$PROJECT_DIR$/js/background.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/list.js" />
         <option value="$PROJECT_DIR$/js/options.js" />
-        <option value="$PROJECT_DIR$/json/info.json" />
-        <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/js/ads.js" />
         <option value="$PROJECT_DIR$/json/ads.json" />
         <option value="$PROJECT_DIR$/js/inject.js" />
         <option value="$PROJECT_DIR$/js/content-script.js" />
+        <option value="$PROJECT_DIR$/options.html" />
+        <option value="$PROJECT_DIR$/popup.html" />
+        <option value="$PROJECT_DIR$/tools.html" />
+        <option value="$PROJECT_DIR$/nav.html" />
+        <option value="$PROJECT_DIR$/submitter.html" />
+        <option value="$PROJECT_DIR$/trigger.html" />
+        <option value="$PROJECT_DIR$/json/info.json" />
+        <option value="$PROJECT_DIR$/list.html" />
+        <option value="$PROJECT_DIR$/script.html" />
+        <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/json/script.json" />
       </list>
     </option>
@@ -276,19 +263,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="zkb_extension" type="b2602c69:ProjectViewProjectNode" />
               <item name="zkb_extension" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zkb_extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zkb_extension" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zkb_extension" type="b2602c69:ProjectViewProjectNode" />
@@ -304,6 +284,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +370,8 @@
       <workItem from="1558186666263" duration="6615000" />
       <workItem from="1558231367983" duration="10553000" />
       <workItem from="1558276721645" duration="406000" />
-      <workItem from="1558277142385" duration="921000" />
+      <workItem from="1558277142385" duration="4678000" />
+      <workItem from="1558359908408" duration="3888000" />
     </task>
     <task id="LOCAL-00001" summary="栏目完善">
       <created>1553399864518</created>
@@ -649,11 +632,39 @@
       <option name="project" value="LOCAL" />
       <updated>1558277938551</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="1.增加脚本中心基础功能">
+      <created>1558278068492</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1558278068492</updated>
+    </task>
+    <task id="LOCAL-00039" summary="1.增加脚本中心基础功能">
+      <created>1558281772381</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558281772381</updated>
+    </task>
+    <task id="LOCAL-00040" summary="1.增加脚本中心基础功能">
+      <created>1558365002046</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1558365002046</updated>
+    </task>
+    <task id="LOCAL-00041" summary="1.增加脚本中心基础功能">
+      <created>1558365899291</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1558365899291</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263416000" />
+    <option name="totallyTimeSpent" value="271061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
@@ -714,13 +725,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/background.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -808,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/nav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/layui.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -857,20 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trigger.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/background.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -885,31 +868,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/submitter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="132" column="60" lean-forward="false" selection-start-line="132" selection-start-column="60" selection-end-line="132" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/nav.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="94" column="77" lean-forward="true" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -920,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" column="89" lean-forward="false" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest_chrome.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
@@ -934,15 +889,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js" />
     <entry file="file://$PROJECT_DIR$/js/devtools.js" />
-    <entry file="file://$PROJECT_DIR$/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2645">
-          <caret line="115" column="22" lean-forward="false" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/t.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
@@ -975,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4301">
           <caret line="187" column="49" lean-forward="false" selection-start-line="187" selection-start-column="49" selection-end-line="187" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,67 +936,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json/info.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3818">
-          <caret line="166" column="42" lean-forward="false" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ads.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/ads.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/content-script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="158" column="70" lean-forward="false" selection-start-line="158" selection-start-column="70" selection-end-line="158" selection-end-column="70" />
-          <folding>
-            <element signature="n#!!block;n#qrcodeMaker#0" expanded="false" />
-            <element signature="n#!!block;n#sendURL#0" expanded="false" />
-            <element signature="n#!!block;n#injectCustomJs#0" expanded="false" />
-            <element signature="n#!!block;n#getScript#0" expanded="false" />
-            <marker date="1558277901360" expanded="true" signature="887:978" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="1102:1193" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="2286:2347" ph="..." />
-            <marker date="1558277901360" expanded="false" signature="3109:3200" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="3201:3830" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="3251:3803" ph="..." />
-            <marker date="1558277901360" expanded="false" signature="3320:3376" ph="..." />
-            <marker date="1558277901360" expanded="false" signature="3449:3756" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="7050:7136" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="7212:7226" ph="..." />
-            <marker date="1558277901360" expanded="true" signature="7269:7283" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,14 +947,132 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/content-script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="889">
+          <caret line="182" column="93" lean-forward="false" selection-start-line="182" selection-start-column="93" selection-end-line="182" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/ads.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ads.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/background.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="56" column="74" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/submitter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="39" column="83" lean-forward="false" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/info.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="85" column="8" lean-forward="false" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1558362085824" expanded="false" signature="2692:2735" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+          <folding>
+            <marker date="1558364607553" expanded="true" signature="1092:1108" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/json/script.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="935">
+          <caret line="57" column="1142" lean-forward="false" selection-start-line="57" selection-start-column="1142" selection-end-line="57" selection-end-column="1142" />
           <folding />
         </state>
       </provider>
