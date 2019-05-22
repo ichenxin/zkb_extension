@@ -3,8 +3,8 @@ $(function () {
     var content, item, row, body = $('.layui-tab-content'), col,
         card, card_header, card_body;
     $.ajax({
-        url: './json/script.json',
-        // url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/nav.json',
+        // url: './json/script.json',
+        url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/script.json',
         type: 'GET',
         dataType: 'json',
         timeout: 3000,

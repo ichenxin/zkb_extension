@@ -1,8 +1,8 @@
 (function () {
     function getInfo() {
         $.ajax({
-            url: './json/ads.json',
-            // url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/ads.json',
+            // url: './json/ads.json',
+            url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/ads.json',
             type: 'GET',
             dataType: 'json',
             timeout: 5000,

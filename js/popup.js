@@ -20,8 +20,8 @@
 
     function initInfo(){
         $.ajax({
-            url: './json/info.json',
-            // url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/info.json',
+            // url: './json/info.json',
+            url: 'https://raw.githubusercontent.com/krapnikkk/zkb_extension/master/json/info.json',
             type: 'GET',
             dataType: 'json',
             timeout: 1000,
