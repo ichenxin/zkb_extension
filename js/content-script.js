@@ -182,7 +182,7 @@ function createScript() {
                                 }
                                 injectScript(fn);
                             } else if (obj.type === 2) {
-                                craetTimeWidget(obj['name'], obj['intro'],fn);//加载时间面板
+                                craetTimeWidget(obj['name'], obj['intro'], fn);//加载时间面板
                                 injectCustomJs();
                             }
                         }
@@ -212,3 +212,19 @@ function b64_to_utf8(str) {
 
 injectCustomJs('js/t.js');
 getScript();
+
+
+var url = window.location.href;
+if (url.indexOf('www.zuanke8.com') > -1) {
+    chrome.storage.local.get({'setting': ''}, function (items) {
+        if (items.setting !== '') {
+            var setting = JSON.parse(items.setting);
+            if (setting.skin) {
+                var css = $('#css_extstyle');
+                if (css) {
+                    css.remove();
+                }
+            }
+        }
+    });
+}

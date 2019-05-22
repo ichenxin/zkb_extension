@@ -71,6 +71,7 @@
     <div class="layui-tab">
         <ul class="layui-tab-title">
             <li class="layui-this">监控设置</li>
+            <li>论坛设置</li>
             <li>激活设置</li>
         </ul>
         <div class="layui-tab-content">
@@ -124,6 +125,22 @@
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <button class="layui-btn btn-save" type ="button">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-tab-item">
+                <form class="layui-form" lay-filter="setting">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label ">皮肤还原</label>
+                        <div class="layui-input-inline skin">
+                            <input type="checkbox" class="skin-switch" name="skin" lay-skin="switch" lay-filter="skin">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">开启后将会把论坛皮肤还原为dz默认蓝</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn btn-setting" type ="button">保存</button>
                         </div>
                     </div>
                 </form>

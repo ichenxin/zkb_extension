@@ -7,6 +7,8 @@
         listen: true,//是否开启监听
         blacklist: "",
         keywords: "电影,话费,水,票,洞,bug,券,红包,话费,关注,Q,B,q,币,京,东,券,领,线报,现金,领,首发,白菜,无限,软件,快,撸,零,一元,货,流量"//关键词
+    }, settings = {
+        skin: false
     };
     var form = layui.form, layer = layui.layer;
     chrome.storage.local.get({'options': ''}, function (items) {
@@ -20,6 +22,13 @@
             options.blacklist = option.blacklist;
         }
         list(options);
+        chrome.storage.local.get({'setting':''},function(items){
+            if(items.setting){
+                var setting = JSON.parse(items.setting);
+                settings = setting;
+                setOptions(settings);
+            }
+        })
     });
 
     function list(options) {
@@ -66,6 +75,10 @@
     form.on('switch(listen)', function (data) {
         options.listen = this.checked;
     });
+    form.on('switch(skin)', function (data) {
+        settings.skin = this.checked;
+
+    });
 
     function getUser() {
         $.ajax({
@@ -80,9 +93,9 @@
             contentType: "application/x-www-form-urlencoded",
             success: function (res) {
                 // console.log(res.data.member_username);
-                if(res.data.member_username){
+                if (res.data.member_username) {
                     saveUser(res.data.member_username);
-                }else{
+                } else {
                     layer.msg('获取用户信息失败！请先登录账号！');
                     window.open("http://www.zuanke8.com/member.php?mod=logging&action=login");
                 }
@@ -134,7 +147,7 @@
 
     function initUser() {
         chrome.storage.local.get({'cdk_url': ''}, function (arg) {
-            $('.buy_link').attr('href',arg['cdk_url']);
+            $('.buy_link').attr('href', arg['cdk_url']);
             chrome.storage.local.get({'nickname': ''}, function (items) {
                 if (items['nickname']) {
                     $('.btn-authorization').hide();
@@ -152,7 +165,7 @@
 
     function login() {
         var nickname, cdk = $('.cdk').val();
-        if(!cdk){
+        if (!cdk) {
             layer.msg('请先输入激活码！');
             return;
         }
@@ -166,7 +179,7 @@
                     xhrFields: {
                         withCredentials: true
                     },
-                    data: {'nickname': nickname,'cdk':cdk},
+                    data: {'nickname': nickname, 'cdk': cdk},
                     crossDomain: true,
                     contentType: "application/x-www-form-urlencoded",
                     success: function (res) {
@@ -179,18 +192,35 @@
                         layer.msg('获取用户信息失败！');
                     }
                 });
-            }else{
+            } else {
                 layer.msg('请先获取登录账号进行激活码绑定！');
             }
         });
     }
 
+    function saveSetting() {
+        var obj = JSON.stringify(settings);
+        chrome.storage.local.set({'setting': obj}, function () {
+            layer.msg('保存成功！');
+        });
+    }
+
+    function setOptions(settings){
+        if (settings.skin) {
+            $('input[name="skin"]').prop("checked", true);
+            $('.skin .layui-form-switch').addClass('layui-form-onswitch');
+        }
+    }
+
     initUser();
 
-    $('.btn-activate').on('click',login);
+    $('.btn-activate').on('click', login);
 
     $('.btn-save').on('click', save);
 
     $('.btn-authorization').on('click', getUser);
+
+    $('.btn-setting').on('click', saveSetting);
+
 
 })();
