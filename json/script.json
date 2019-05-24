@@ -60,7 +60,21 @@
       "show_time": 1,
       "type":1,
       "content": "dmFyIHQxLHQyLGJ0bj0kKCIucGhvbmUtYnRuIik7dmFyIHNlcnZpY2UsbW9iaWxlO2lmKCFzZXJ2aWNlKXtzZXJ2aWNlPXByb21wdCgi6K+36YCJ5oup6L+Q6JCl5ZWGKDA656e75YqoMTrogZTpgJoyOueUteS/oSkiLCIwIil9O2lmKCFtb2JpbGUpe21vYmlsZT1wcm9tcHQoIuivt+i+k+WFpeaJi+acuuWPt+eggSIsIiIpO310MT13aW5kb3cuc2V0SW50ZXJ2YWwoZ2V0VGltZSwzMDApO2Z1bmN0aW9uIGdldFRpbWUoKXskLmFqYXgoe3VybDoiaHR0cHM6Ly9hcGkubS5qZC5jb20vY2xpZW50LmFjdGlvbj9mdW5jdGlvbklkPWJhYmVsQWN0aXZpdHlHZXRTaGFyZUluZm8mY2xpZW50PXdoNSZjYWxsYmFjaz1rcmFwbmlrIixkYXRhVHlwZToianNvbnAifSk7fWZ1bmN0aW9uIGtyYXBuaWsocmVzKXtpZih0cmFuc1RpbWUocmVzLnRpbWUpPj05NTk1OSl7d2luZG93LmNsZWFySW50ZXJ2YWwodDEpO2F1dG9DbGljaygpO307fWZ1bmN0aW9uIGFkZDAobSl7cmV0dXJuIG08MTA/IjAiK206bTt9ZnVuY3Rpb24gdHJhbnNUaW1lKHRpbWVzdGFtcCl7dmFyIHRpbWU9bmV3IERhdGUoK3RpbWVzdGFtcCksaD10aW1lLmdldEhvdXJzKCksbT10aW1lLmdldE1pbnV0ZXMoKSxzPXRpbWUuZ2V0U2Vjb25kcygpO3JldHVybiBOdW1iZXIoYCR7YWRkMChoKX0ke2FkZDAobSl9JHthZGQwKHMpfWApO31mdW5jdGlvbiBhdXRvQ2xpY2soKXskKCIuYmlsbCAucHJvZHVjdC1pdGVtIikuZXEoK3NlcnZpY2UpLnJlbW92ZUNsYXNzKCJjYW5ub3RCdXkiKS50cmlnZ2VyKCJjbGljayIpOyQoIi5waG9uZS1pbnB1dCIpLnZhbChtb2JpbGUpO2J0bi5hZGRDbGFzcygiYWN0aXZlIik7YnRuWzBdLmNsaWNrKCk7fQ=="
+    },
+    {
+      "id": 5,
+      "name": "	金果摇钱树自动无限次收金果辅助",
+      "url": "wxgrowing/moneytree/index.html",
+      "update_time": "20190524",
+      "active_time": "2019_05_24至2019_06_18",
+      "details_url": "https://u.jr.jd.com/wxgrowing/moneytree/index.html",
+      "switch": 1,
+      "activate": 0,
+      "free":1,
+      "intro":"根据输入的时间间隔自动提交收金果请求",
+      "show_time": 0,
+      "type":1,
+      "content": "amF2YXNjcmlwdDp2YXIgcG9zdERhdGEsdDEsZGF0YSx0aW1lciA9IHByb21wdCgi6K+36L6T5YWl6K+35rGC5pe26Ze0KOavq+enkik6Iiw1MDAwKTt0MT13aW5kb3cuc2V0SW50ZXJ2YWwoYXV0b0ZldGNoLCt0aW1lcik7ZnVuY3Rpb24gYXV0b0ZldGNoKCl7cG9zdERhdGE9eyJzb3VyY2UiOjIsInNoYXJlUGluIjpudWxsfTtmZXRjaCgiaHR0cHM6Ly9tcy5qci5qZC5jb20vZ3cvZ2VuZXJpYy91Yy9oNS9tL2hhcnZlc3QiLHttZXRob2Q6IlBPU1QiLG1vZGU6ImNvcnMiLGNyZWRlbnRpYWxzOiJpbmNsdWRlIixoZWFkZXJzOnsiQ29udGVudC1UeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIn0sYm9keToicmVxRGF0YT0iK0pTT04uc3RyaW5naWZ5KHBvc3REYXRhKX0pLnRoZW4oZnVuY3Rpb24ocmVzcG9uc2Upe3JldHVybiByZXNwb25zZS5qc29uKCl9KS50aGVuKGZ1bmN0aW9uKHJlcyl7ZGF0YT1yZXMucmVzdWx0RGF0YS5kYXRhLnRyZWVJbmZvO2lmKGRhdGEpe2NvbnNvbGUubG9nKGDmlbDph4/vvJoke2RhdGEuZnJ1aXR9fOetiee6p++8miR7ZGF0YS50cmVlTmFtZX186Led56a75Y2H57qn77yaJHtkYXRhLnByb2dyZXNzTGVmdH1gKX19KX0="
     }
-
   ]
 }
