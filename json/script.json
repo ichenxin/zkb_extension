@@ -78,7 +78,7 @@
     },
     {
       "id": 5,
-      "name":"京喜！神券/领神券【199-100支付券】",
+      "name":"京喜！神券/领神券【199-100支付券】(测试中)",
       "url": "channel/ktyh.html",
       "update_time": "20190525",
       "active_time": "2019_05_25至2019_06_30",
@@ -90,6 +90,36 @@
       "show_time": 0,
       "type":2,
       "content": "dmFyIHQxLHQyLGNvdW50PTAsbm93O3QxPXdpbmRvdy5zZXRJbnRlcnZhbChnZXRUaW1lLDM1MCk7ZnVuY3Rpb24gZ2V0VGltZSgpeyQuYWpheCh7dXJsOiJodHRwczovL2FwaS5tLmpkLmNvbS9jbGllbnQuYWN0aW9uP2Z1bmN0aW9uSWQ9YmFiZWxBY3Rpdml0eUdldFNoYXJlSW5mbyZjbGllbnQ9d2g1JmNhbGxiYWNrPWNvdW50RG93biIsZGF0YVR5cGU6Impzb25wIn0pO31mdW5jdGlvbiBjb3VudERvd24ocmVzKXtub3c9dHJhbnNUaW1lKHJlcy50aW1lKTtpZigoKG5vdz49OTU5NTkmJm5vdzwxMDAwMTApfHxub3c+PTEzNTk1OSYmbm93PDE0MDAxMCl8fChub3c+PTE3NTk1OSYmbm93PDE4MDAxMCl8fChub3c+PTE5NTk1OSYmbm93PDIwMDAxMCl8fChub3c+PTIxNTk1OSYmbm93PDIyMDAxMCkpe3dpbmRvdy5jbGVhckludGVydmFsKHQxKTt0Mj13aW5kb3cuc2V0SW50ZXJ2YWwoYXV0b0dldCwzMDApO307fWZ1bmN0aW9uIGFkZDAobSl7cmV0dXJuIG08MTA/IjAiK206bTt9ZnVuY3Rpb24gdHJhbnNUaW1lKHRpbWVzdGFtcCl7dmFyIHRpbWU9bmV3IERhdGUoK3RpbWVzdGFtcCksaD10aW1lLmdldEhvdXJzKCksbT10aW1lLmdldE1pbnV0ZXMoKSxzPXRpbWUuZ2V0U2Vjb25kcygpO3JldHVybiBOdW1iZXIoYCR7YWRkMChoKX0ke2FkZDAobSl9JHthZGQwKHMpfWApO31mdW5jdGlvbiBhdXRvR2V0KCl7Y291bnQrKztpZihjb3VudDw9NTApeyQuYWpheCh7dXJsOiJodHRwczovL29wZW5jcmVkaXQuamQuY29tL2FjdC9nZXQvY291cG9uP2NvdXBvbkJ1c2luZXNzSWQ9MDcxZDYwODljY2EyMDIyYzg3ZGQ2MDg5ZWJkNjg1YWQmYWN0SWQ9MDA0JmFncmVlbWVudFNvdXJjZT03NyZwbGF0Zm9ybT0zJnBhZ2VDbGlja0tleT1qciU3Q2tleWNvdW50JTdDeGJ4eV9rdHloJTdDY291cG9uMTk5JmNhbGxiYWNrPWtyYXBuaWsiLGRhdGFUeXBlOiJqc29ucCIsanNvbnA6ImtyYXBuaWsiLGpzb25wQ2FsbGJhY2s6ImtyYXBuaWsifSk7fWVsc2V7d2luZG93LmNsZWFySW50ZXJ2YWwodDIpO319ZnVuY3Rpb24ga3JhcG5payhyZXMpe2lmKHJlc3BvbnNlQ29kZT09IjEzMDAxIil7YWxlcnQoIuaBreWWnOS9oOaKouWIsOWVpu+8ge+8gSIpO3dpbmRvdy5jbGVhckludGVydmFsKHQyKTt9fQ=="
+    },
+    {
+      "id": 6,
+      "name":"苏宁优惠券自动秒杀脚本",
+      "url": "couponcenter_1__",
+      "update_time": "20190526",
+      "active_time": "永久有效",
+      "details_url": "http://www.zuanke8.com/forum.php?mod=viewthread&tid=6073558",
+      "switch": 1,
+      "activate": 0,
+      "free":1,
+      "intro":"活动开始前点击按钮开启脚本，自动监听时间秒杀！",
+      "show_time": 0,
+      "type":2,
+      "content": "KGZ1bmN0aW9uKCl7dmFyIHRpbWVOdW0gPSBOdW1iZXIoJCgiLmNvdXBvbi10aW1lIGkiKS5odG1sKCkuc3Vic3RyaW5nKDExLDEzKSk7dmFyIGdldEhvdXIgPSB0aW1lTnVtID09PSAwID8gMjMgOiB0aW1lTnVtIC0xO3ZhciBzdGFydFRpbWUgPSArKGdldEhvdXIudG9TdHJpbmcoKSArIGA1OTU5YCk7dmFyIHRpbWVzdGFtcCxuLHQxLHQyLHQzLHBvc3RDbnQ9MDt0MSA9IHNldEludGVydmFsKGZ1bmN0aW9uICgpeyQuYWpheCh7dXJsOiAiLy9xdWFuLnN1bmluZy5jb20vZ2V0U3lzVGltZS5kbyIsdHlwZTogImdldCIsZGF0YVR5cGU6ICJqc29uIixhc3luYzogZmFsc2Usc3VjY2VzczogZnVuY3Rpb24gKHJlcykge3RpbWVzdGFtcD1yZXMuc3lzVGltZTE7biA9IE51bWJlcih0aW1lc3RhbXAuc3Vic3RyaW5nKDgpKTskKCIuc2hvcC1uYW1lIikuaHRtbChg5b2T5YmN5pyN5Yqh5Zmo5pe26Ze0OiR7cmVzLnN5c1RpbWUyfWApO319KTt9LDEwMDApO2Z1bmN0aW9uIGV4Y2hhbmdlKCl7aWYobj49c3RhcnRUaW1lKXtwb3N0Q250Kys7dDMgPSB3aW5kb3cuc2V0SW50ZXJ2YWwocmVjZWl2ZUNvdXBvbihpbmRlcGVuZGVuY2VBY3RJZCAsaW5kZXBlbmRlbmNlQWN0S2V5ICwiMyIsIjEwMDA1IiksIDUwMCk7fWlmKHBvc3RDbnQ+PTYpe2NsZWFySW50ZXJ2YWwodDIpO2NsZWFySW50ZXJ2YWwodDMpO319O3QyID0gc2V0SW50ZXJ2YWwoZXhjaGFuZ2UsNTAwKTt9KSgp"
+    },
+    {
+      "id": 7,
+      "name":"苏宁云钻兑券自动抢兑脚本",
+      "url": "exchange/voucher",
+      "update_time": "20190526",
+      "active_time": "永久有效",
+      "details_url": "http://www.zuanke8.com/forum.php?mod=viewthread&tid=6073558",
+      "switch": 1,
+      "activate": 0,
+      "free":1,
+      "intro":"活动开始前点击按钮开启脚本，自动监听时间抢兑！",
+      "show_time": 0,
+      "type":2,
+      "content": "KGZ1bmN0aW9uKCkge3ZhciBleHBvcnRJZDt2YXIgdm91Y2hlclN0ciA9IGdldFZvdWNoZXJTdGF0ZUJ5QXV0aC50b1N0cmluZygpO3ZhciBleHBvcnRGbiA9IGB2YXIgdm91Y2hlckZuID1gK3ZvdWNoZXJTdHIuc3Vic3RyaW5nKDAsdm91Y2hlclN0ci5sZW5ndGgtMSkrYGV4cG9ydElkID0gdm91Y2hlcklkO31gO2V2YWwoZXhwb3J0Rm4pO3ZvdWNoZXJGbigpO3ZhciB0aW1lTnVtID0gKyQoIi5wMDQiKS5odG1sKCkuc3Vic3RyaW5nKDExLDEzKTt2YXIgZ2V0SG91ciA9IHRpbWVOdW0gPT09IDAgPyAyMyA6IHRpbWVOdW0gLTE7dmFyIHN0YXJ0VGltZSA9ICsoZ2V0SG91ci50b1N0cmluZygpICsgYDU5NTlgKTt2YXIgdGltZXN0YW1wLG4sdDEsdDIsdDMscG9zdENudD0wLGZsYWcgPSBmYWxzZTt0MSA9IHNldEludGVydmFsKGZ1bmN0aW9uICgpeyQuYWpheCh7dXJsOiAiLy9xdWFuLnN1bmluZy5jb20vZ2V0U3lzVGltZS5kbyIsdHlwZTogImdldCIsZGF0YVR5cGU6ICJqc29uIixhc3luYzogZmFsc2Usc3VjY2VzczogZnVuY3Rpb24gKHJlcykge3RpbWVzdGFtcD1yZXMuc3lzVGltZTE7biA9IE51bWJlcih0aW1lc3RhbXAuc3Vic3RyaW5nKDgpKTskKCIuc2hvcC1uYW1lIikuaHRtbChgdm91Y2hlcklkOiR7ZXhwb3J0SWR9IOW8gOaKouaXtumXtO+8miR7c3RhcnRUaW1lfWApOyQoIi50aW1lIikuaHRtbChg5b2T5YmN5pyN5Yqh5Zmo5pe26Ze0OiR7cmVzLnN5c1RpbWUyfWApO319KTt9LDEwMDApO2Z1bmN0aW9uIGNvdXBvbigpIHt2YXIgdXJsPWBodHRwczovL3l6ZGguc3VuaW5nLmNvbS95emRoLXdlYi92b3VjaGVyL3NlbmRWb3VjaGVyLmRvP2NhbGxiYWNrPWNhbGxiYWNrU2VuZFZvdWNoZXJGdW4mdm91Y2hlcklkPSR7ZXhwb3J0SWR9JnZvdWNoZXJUeXBlPTEmY291cG9uR2V0U291cmNlPVZJUCZkZXRlY3Q9JHtlbmNvZGVVUklDb21wb25lbnQoYmQucnN0KCkpfWAscmVzdWx0ID1gPGlmcmFtZSB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgc3R5bGU9ImJvcmRlcjoxcHggc29saWQgIzY2NjY2NjsiIHNyYz0iJHt1cmx9Ij48L2lmcmFtZT5gOyQoImJvZHkiKS5wcmVwZW5kKHJlc3VsdCk7cG9zdENudCsrO31mdW5jdGlvbiBleGNoYW5nZSgpe2lmKG4+PXN0YXJ0VGltZSYmIWZsYWcpe2ZsYWcgPSB0cnVlO2NsZWFySW50ZXJ2YWwodDEpO3QzID0gd2luZG93LnNldEludGVydmFsKGNvdXBvbiwgNTAwKTt9aWYocG9zdENudD49NiYmZmxhZyl7Y2xlYXJJbnRlcnZhbCh0Mik7Y2xlYXJJbnRlcnZhbCh0Myk7fX10MiA9IHNldEludGVydmFsKGV4Y2hhbmdlLDUwMCk7fSkoKQ=="
     }
   ]
 }
