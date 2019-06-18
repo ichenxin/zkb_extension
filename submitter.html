@@ -53,11 +53,11 @@
         </ul>
     </div>
     <div class="layui-tab-content">
-        <blockquote class="layui-elem-quote" style="text-align: center">北京时间：{{now.string}}<br>【该时间通过京东服务器接口实时获取】</blockquote>
+        <blockquote class="layui-elem-quote" style="text-align: center">北京时间：{{now.string}}<br>【该时间通过京东服务器接口实时获取，500ms获取一次，同时也以500ms为间隔去对比北京时间和定时时间】</blockquote>
         <div class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">定时时间：</label>
-                <div class="layui-input-inline" style="width:380px">
+                <div class="layui-input-inline" style="width:480px">
                     <input style="width: 60px;display:inline" type="text" name="year" :disabled="is_post"
                            v-model="post_time.year" required lay-verify="required|number" placeholder="年"
                            autocomplete="off" class="layui-input">
@@ -76,8 +76,11 @@
                     <input style="width: 60px;display:inline" type="text" name="second" :disabled="is_post"
                            v-model="post_time.second" required lay-verify="required|number" placeholder="秒"
                            autocomplete="off" class="layui-input">
+                    <input style="width: 60px;display:inline" type="text" name="millisecond" :disabled="is_post"
+                           v-model="post_time.millisecond" required lay-verify="required|number" placeholder="毫秒"
+                           autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-mid layui-word-aux">时间格式：2017-01-07 00-00-00</div>
+                <div class="layui-form-mid layui-word-aux">时间格式：2017-01-07 00-00-00-000</div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">刷新间隔：</label>
@@ -123,7 +126,7 @@
         <hr class="layui-bg-blue">
         <blockquote class="layui-elem-quote" v-show="is_post">
             请根据下面窗口返回的显示内容判断提交的链接是否正确有效！
-            <br>已经开启定时,距离自动提交时间还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span> <span>{{count_down.second}}秒</span>
+            <br>已经开启定时,距离自动提交时间还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span> <span>{{count_down.second}}秒</span><span>{{count_down.millisecond}}毫秒</span>
             <br>已提交次数：{{has_post_count}}
         </blockquote>
         <iframe style="width:370px; height:200px;" :src="post_url" v-show="is_post" frameborder="1"
