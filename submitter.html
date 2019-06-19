@@ -28,32 +28,33 @@
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo">
-            <a class="logo" href="javascript:void(0)">
-                <img src="img/icon.png" alt="layui">
-            </a>
-        </div>
-        <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="list.html">监控</a></li>
-            <li class="layui-nav-item"><a href="nav.html">导航</a></li>
-            <li class="layui-nav-item layui-this"><a href="tools.html">工具箱</a></li>
-            <li class="layui-nav-item"><a href="script.html">脚本中心</a></li>
-            <li class="layui-nav-item"><a href="options.html">设置</a></li>
-        </ul>
-        <ul class="layui-nav layui-layout-right">
-            <!--<li  class="layui-nav-item" style="margin-top: 10px;">-->
-            <!--<iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>-->
-            <!--</li>-->
-            <li class="layui-nav-item">
-                <a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">
-                    <img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">
-                </a>
-            </li>
-        </ul>
-    </div>
+    <!--<div class="layui-header">-->
+        <!--<div class="layui-logo">-->
+            <!--<a class="logo" href="javascript:void(0)">-->
+                <!--<img src="img/icon.png" alt="layui">-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<ul class="layui-nav layui-layout-left">-->
+            <!--<li class="layui-nav-item"><a href="list.html">监控</a></li>-->
+            <!--<li class="layui-nav-item"><a href="nav.html">导航</a></li>-->
+            <!--<li class="layui-nav-item layui-this"><a href="tools.html">工具箱</a></li>-->
+            <!--<li class="layui-nav-item"><a href="script.html">脚本中心</a></li>-->
+            <!--<li class="layui-nav-item"><a href="options.html">设置</a></li>-->
+        <!--</ul>-->
+        <!--<ul class="layui-nav layui-layout-right">-->
+            <!--&lt;!&ndash;<li  class="layui-nav-item" style="margin-top: 10px;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=krapnikkk&repo=zkb_extension&type=watch&count=true" width="100" height="20"></iframe>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="layui-nav-item">&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="tencent://message/?uin=708873725Menu=yes" target="_blank" title="发起QQ聊天">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="http://bizapp.qq.com/webimg/01_online.gif" alt="QQ" style="margin:0px;">&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--</ul>-->
+    <!--</div>-->
     <div class="layui-tab-content">
-        <blockquote class="layui-elem-quote" style="text-align: center">北京时间：{{now.string}}<br>【该时间通过京东服务器接口实时获取，500ms获取一次，同时也以500ms为间隔去对比北京时间和定时时间】</blockquote>
+        <blockquote class="layui-elem-quote" style="text-align: center">北京时间：{{now.string}}<br>【该时间通过京东服务器接口实时获取，500ms获取一次，同时也以500ms为间隔去对比北京时间和定时时间】
+        </blockquote>
         <div class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">定时时间：</label>
@@ -91,28 +92,42 @@
                 <div class="layui-form-mid layui-word-aux">提交的间隔时间，默认：500(ms)</div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">提交地址：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-show="!is_post" v-model="post_url" required lay-verify="required|url" autocomplete="off" class="layui-input">
-                    <input type="text" name="title" disabled v-model="post_url_temp" v-show="is_post" autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid layui-word-aux">提交地址，举个栗子：【http://m.baidu.com/】</div>
-            </div>
-            <div class="layui-form-item">
                 <label class="layui-form-label">窗口数目：</label>
                 <div class="layui-input-inline">
                     <input type="text" name="title" :disabled="is_post" v-model="post_window_count" required
-                           lay-verify="required|number" value="1" autocomplete="off" class="layui-input">
+                           lay-verify="required|number" value="1" autocomplete="off" class="layui-input" disabled>
                 </div>
                 <div class="layui-form-mid layui-word-aux">开启的窗口数目 默认：1</div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">提交次数：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="title" :disabled="is_post" v-model="post_count" required value="0" lay-verify="required|number"
+                    <input type="text" name="title" :disabled="is_post" v-model="post_count" required value="0"
+                           lay-verify="required|number"
                            autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">指所有窗口的提交次数的总数 默认：0【无限次】</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">提交模式：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" :disabled="is_post" v-model="post_mode" required
+                           lay-verify="required|number" value="1" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">1:iFrame 2:GET【一般iFrame满足大部分需求】</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">提交地址：</label>
+                <!--<div class="layui-input-inline">-->
+                <!--<input type="text" name="title" :disabled="is_post" v-show="!is_post" v-model="post_url" required-->
+                <!--lay-verify="required|url" autocomplete="off" class="layui-input">-->
+                <!--<input type="text" name="title" disabled v-model="post_url_temp" v-show="is_post" autocomplete="off"-->
+                <!--class="layui-input">-->
+                <!--</div>-->
+                <!--<div class="layui-form-mid layui-word-aux">提交地址，举个栗子：【http://m.baidu.com/】</div>-->
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea" v-model="post_url" required></textarea>
+                </div>
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block" v-if="!is_post">
@@ -126,17 +141,22 @@
         <hr class="layui-bg-blue">
         <blockquote class="layui-elem-quote" v-show="is_post">
             请根据下面窗口返回的显示内容判断提交的链接是否正确有效！
-            <br>已经开启定时,距离自动提交时间还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span> <span>{{count_down.second}}秒</span><span>{{count_down.millisecond}}毫秒</span>
+            <br>已经开启定时,距离自动提交时间还有：<span>{{count_down.day}}天</span> <span>{{count_down.hour}}时</span> <span>{{count_down.minutes}}分</span>
+            <span>{{count_down.second}}秒</span><span>{{count_down.millisecond}}毫秒</span>
+            <br>首次提交时间：{{first_commit_time}}
             <br>已提交次数：{{has_post_count}}
         </blockquote>
-        <iframe style="width:370px; height:200px;" :src="post_url" v-show="is_post" frameborder="1"
+        <iframe style="width:370px; height:200px;" :src="post_url" v-show="is_post&&post_mode==1" frameborder="1"
                 v-for="item in post_window_arr"></iframe>
+        <div class="resContent">
+            <p class="resStr"  v-show="is_post&&post_mode!=1">{{post_res}}</p>
+        </div>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="js/layui.all.js"></script>
 <script type="text/javascript" src="js/submitter.js"></script>
-<script type="text/javascript" src="js/ads.js"></script>
+<!--<script type="text/javascript" src="js/ads.js"></script>-->
 </body>
 </html>
