@@ -4,10 +4,10 @@
     {
       "id": 1,
       "name": "京东自动评价脚本v1.0",
-      "url": "http://club.jd.com/myJdcomments/myJdcomments.action?sort=0",
+      "url": "myJdcomments/myJdcomments.action?sort=0",
       "update_time": "20190722",
       "active_time": "永久有效",
-      "details_url": "",
+      "details_url": "http://club.jd.com/myJdcomments/myJdcomments.action?sort=0",
       "switch": 1,
       "activate": 0,
       "free": 1,
