@@ -3,7 +3,7 @@
   "data": [
     {
       "id": 1,
-      "name": "京东自动评价脚本",
+      "name": "京东自动评价脚本v1.0",
       "url": "http://club.jd.com/myJdcomments/myJdcomments.action?sort=0",
       "update_time": "20190722",
       "active_time": "永久有效",
